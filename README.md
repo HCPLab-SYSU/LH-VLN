@@ -1,4 +1,4 @@
-# Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method
+# Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method (CVPR-25)
 
 ### Datasets and Codes
 Soon will be available!
