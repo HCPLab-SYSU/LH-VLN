@@ -2,7 +2,7 @@
 
 <h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
 
-<img src="static/images/1-intro.png" width="50%"/>
+<img src="static/images/1-intro.png" width="80%"/>
 <br />
 
 <a href="https://arxiv.org/abs/2412.09082" target="_blank">
