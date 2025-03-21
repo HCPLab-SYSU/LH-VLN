@@ -2,7 +2,7 @@
 
 <h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
 
-<img src="static/images/1-intro.png" width="100%"/>
+<img src="static/images/1-intro.png" width="90%"/>
 <br />
 
 <a href="https://arxiv.org/abs/2412.09082" target="_blank">
@@ -29,12 +29,17 @@
     <sup>2</sup>Peng Cheng Laboratory&emsp;
     <sup>3</sup>Guangdong Key Laboratory of Big Data Analysis and Processing&emsp;
 </div>
-
+<br />
 <p align="justify"><i>Existing Vision-Language Navigation (VLN) methods primarily focus on single-stage navigation, limiting their effectiveness in multi-stage and long-horizon tasks within complex and dynamic environments. To address these limitations, we propose a novel VLN task, named Long-Horizon Vision-Language Navigation (LH-VLN), which emphasizes long-term planning and decision consistency across consecutive subtasks. Furthermore, to support LH-VLN, we develop an automated data generation platform NavGen, which constructs datasets with complex task structures and improves data utility through a bidirectional, multi-granularity generation approach. To accurately evaluate complex tasks, we construct the Long-Horizon Planning and Reasoning in VLN (LHPR-VLN) benchmark consisting of 3,260 tasks with an average of 150 task steps, serving
 as the first dataset specifically designed for the long-horizon vision-language navigation task. Furthermore, we propose Independent Success Rate (ISR), Conditional Success Rate (CSR), and CSR weight by Ground Truth (CGT) metrics, to provide fine-grained assessments of task completion. To improve model adaptability in complex tasks, we propose a novel Multi-Granularity Dynamic Memory (MGDM) module that integrates short-term memory blurring with long-term memory retrieval to enable flexible navigation in dynamic environments. Our platform, benchmark and method supply LH-VLN with a robust data generation pipeline, comprehensive model evaluation dataset, reasonable metrics, and a novel VLN model, establishing a foundational framework for advancing LH-VLN. </i></p>
 </div>
 
+## Dataset
+Trajectory dataset of LHPR-VLN is available in
 
+## Timeline
+- [ ] 2025.4: NavGen pipline
+- [ ] 2025.5: Benchmark
 
 ## Citation
 
