@@ -1,7 +1,5 @@
 <div align="center" style="font-family: charter;">
 
-<h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
-
 <img src="static/images/1-intro.png" width="90%"/>
 <br />
 
