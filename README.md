@@ -34,10 +34,12 @@
 as the first dataset specifically designed for the long-horizon vision-language navigation task. Furthermore, we propose Independent Success Rate (ISR), Conditional Success Rate (CSR), and CSR weight by Ground Truth (CGT) metrics, to provide fine-grained assessments of task completion. To improve model adaptability in complex tasks, we propose a novel Multi-Granularity Dynamic Memory (MGDM) module that integrates short-term memory blurring with long-term memory retrieval to enable flexible navigation in dynamic environments. Our platform, benchmark and method supply LH-VLN with a robust data generation pipeline, comprehensive model evaluation dataset, reasonable metrics, and a novel VLN model, establishing a foundational framework for advancing LH-VLN. </i></p>
 </div>
 
-## Dataset
-Trajectory dataset of LHPR-VLN is available in
+## LHPR-VLN Dataset
+
+Our dataset is now uploading to the [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN), it will be online in these days. Thanks a lot for your patience!
 
 ## Timeline
+
 - [ ] 2025.4: NavGen pipline
 - [ ] 2025.5: Benchmark
 
