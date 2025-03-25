@@ -1,5 +1,5 @@
-# Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method (CVPR-25)
- <div align="center" style="font-family: charter;">
+<div align="center" style="font-family: charter;">
+ <h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
 <img src="static/images/1-intro.png" width="90%"/>
 <br />
 
@@ -34,12 +34,12 @@ as the first dataset specifically designed for the long-horizon vision-language 
 
 ## LHPR-VLN Dataset
 
-Our dataset is now uploading to the [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN), it will be online in these days. Thanks a lot for your patience!
+Our dataset is now available in [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN). Thanks a lot for your patience!
 
 ## Timeline
 
 - [ ] 2025.4: NavGen pipline
-- [ ] 2025.5: Benchmark
+- [ ] 2025.5: Full benchmark
 
 ## Citation
 
