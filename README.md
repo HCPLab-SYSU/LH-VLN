@@ -34,7 +34,7 @@ as the first dataset specifically designed for the long-horizon vision-language 
 
 ## LHPR-VLN Dataset
 
-Our dataset is now available in [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN). Thanks a lot for your patience!
+Our dataset is now available in [Hugging Face](https://huggingface.co/datasets/Starry123/LHPR-VLN) and [ModelScope](https://modelscope.cn/datasets/starry123/LHPR-VLN). Thanks a lot for your patience!
 
 ## Timeline
 
