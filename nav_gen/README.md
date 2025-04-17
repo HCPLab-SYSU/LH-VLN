@@ -23,5 +23,5 @@ Now you can generate tasks with the following command:
 
 ```bash
 cd nav_gen
-python main.py --API_KEY <your_openai_api_key> --loop 200
+python main.py --API_KEY <your_openai_api_key> --loop 100
 ```
