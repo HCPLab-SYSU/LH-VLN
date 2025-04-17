@@ -32,14 +32,70 @@
 as the first dataset specifically designed for the long-horizon vision-language navigation task. Furthermore, we propose Independent Success Rate (ISR), Conditional Success Rate (CSR), and CSR weight by Ground Truth (CGT) metrics, to provide fine-grained assessments of task completion. To improve model adaptability in complex tasks, we propose a novel Multi-Granularity Dynamic Memory (MGDM) module that integrates short-term memory blurring with long-term memory retrieval to enable flexible navigation in dynamic environments. Our platform, benchmark and method supply LH-VLN with a robust data generation pipeline, comprehensive model evaluation dataset, reasonable metrics, and a novel VLN model, establishing a foundational framework for advancing LH-VLN. </i></p>
 </div>
 
+## Preparation
+
+### Environment
+
+This project is developed with Python 3.9. You can use [miniconda](https://docs.conda.io/en/latest/miniconda.html) or [anaconda](https://anaconda.org/) to create the environment:
+
+```bash
+conda create -n lhvln python=3.9
+conda activate lhvln
+```
+
+We uses [Habitat-Sim](https://github.com/facebookresearch/habitat-sim/tree/main) as simulator, which can be [built from source](https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md#build-from-source) or installed from conda:
+
+```bash
+conda install habitat-sim headless -c conda-forge -c aihabitat
+```
+
+Then you can install the environment required for the project:
+
+```bash
+git clone https://github.com/HCPLab-SYSU/LH-VLN.git
+cd LH-VLN
+pip install -r requirements.txt
+```
+
+### Data
+
+We use [HM3D](https://aihabitat.org/datasets/hm3d/) as the scene dataset. You can download the splits required by following the command below. Note that you need to submit an application to [Matterport](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data) before using it. For more information, please refer to [this link](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d).
+
+```bash
+python -m habitat_sim.utils.datasets_download --username <api-token-id> --password <api-token-secret> --uids hm3d_train_v0.2
+python -m habitat_sim.utils.datasets_download --username <api-token-id> --password <api-token-secret> --uids hm3d_val_v0.2
+```
+
+In NavGen, we use the pre-trained model of [RAM](https://github.com/xinyu1205/recognize-anything). You can download the model [here](https://huggingface.co/xinyu1205/recognize-anything-plus-model/blob/main/ram_plus_swin_large_14m.pth).
+
+Your final directory structure should be like this:
+
+```
+LH-VLN
+├── data
+│   ├── hm3d
+│   │   ├── train
+│   │   ├── val
+│   │   ├── hm3d_annotated_basis.scene_dataset_config.json
+│   └── models
+│   │   └── ram_plus_swin_large_14m.pth
+```
+
 ## LHPR-VLN Dataset
 
 Our dataset is available in [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN). Thanks a lot for your patience!
 
+## NavGen Pipline
+
+After completing the preparations, you can now refer to the [guide](https://github.com/HCPLab-SYSU/LH-VLNnav_gen/README.md) to generate your LH-VLN task!
+
 ## Timeline
 
-- [ ] 2025.4: NavGen pipline
 - [ ] 2025.5: Full benchmark
+
+## Acknowledgement
+
+We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything`. Thanks for their contribution!!
 
 ## Citation
 
