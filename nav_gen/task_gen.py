@@ -8,7 +8,7 @@ import csv
 import ast
 import os
 
-from gpt import gpt4
+from gpt import gpt4o_mini, gpt4o
 
 def sample_obj(scene_dic):
     for key, value in scene_dic.items():
@@ -170,7 +170,7 @@ def gen_task(args):
     prompt = prompt_rule + "\n" + prompt_example + "\n" + prompt_input
     print(prompt)
     
-    task = gpt4(args, args.prompt_path + "system.txt", prompt)
+    task = gpt4o_mini(args, args.prompt_path + "system.txt", prompt)
     if '```' in task:
         task = task[3:-3]
     if "python" in task:
