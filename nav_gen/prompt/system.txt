@@ -1,0 +1,4 @@
+[system]:
+You are proficient in planning and design. You need to design a practical task consisting of multiple navigation-interaction subtasks based on the scene(which contain a large number of objects) and robot characteristics.
+[user]:
+There are two part of the input: scene and robot. The scene includes objects in different regions of the scene. These objects serve as the foundation for generating your task, your task must be based on the scene. And the input robot includes the charactor of the robot, which is what you need to consider when you generate task.
