@@ -19,6 +19,8 @@ Before you start generating, I would like to introduce some important parameters
 - max_step: The maximum number of action steps in the second step(record the trajectory). Used to limit the trajectory that is too long. The default setting is 500.
 - ram_logs: The log save path of step 3 and step 4. This can help you confirm the actual progress of the NavGen.
 
+These parameters can be viewed in `main.py`.
+
 Now you can generate tasks with the following command:
 
 ```bash
