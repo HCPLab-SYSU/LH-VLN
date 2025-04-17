@@ -23,7 +23,7 @@ def prompt_make(prompt_path, ex_prompt):    # set prompt
         return prompt_system, prompt
 
 
-def gpt4(args, prompt_path, ex_prompt):   # It is gpt4-o
+def gpt4o(args, prompt_path, ex_prompt):   # It is gpt4-o
     # OpenAI API Key
     api_key = args.API_KEY
 
@@ -49,12 +49,12 @@ def gpt4(args, prompt_path, ex_prompt):   # It is gpt4-o
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
     output = response.json()
-    print(output["usage"])
-    print(output["choices"][0]['message'])
+    # print(output["usage"])
+    # print(output["choices"][0]['message'])
     return output["choices"][0]['message']["content"]
 
 
-def gpt3_5(args, prompt_path, ex_prompt):  # It is gpt4-o-mini
+def gpt4o_mini(args, prompt_path, ex_prompt):  # It is -o-mini
     # OpenAI API Key
     api_key = args.API_KEY
 
@@ -80,8 +80,8 @@ def gpt3_5(args, prompt_path, ex_prompt):  # It is gpt4-o-mini
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
     output = response.json()
-    print(output["usage"])
-    print(output["choices"][0]['message'])
+    # print(output["usage"])
+    # print(output["choices"][0]['message'])
     return output["choices"][0]['message']["content"]
 
 
