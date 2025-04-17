@@ -10,7 +10,7 @@ from PIL import Image
 from recognize_anything.ram.models import ram_plus
 from recognize_anything.ram import inference_ram as inference
 from recognize_anything.ram import get_transform
-from gpt import gpt3_5, gpt4
+from gpt import gpt4o_mini, gpt4o
 from tqdm import tqdm
 
 
@@ -263,7 +263,7 @@ def make_task(args, trail_list):
             step_former += len(config["trial"][trail_name]['pos'])
         task['start_pos'] = config["trial"]['trial_' + str(index)]['pos'][task["start"]-step_former]
         task['start_yaw'] = config["trial"]['trial_' + str(index)]['yaw'][task["start"]-step_former]
-        task["Task instruction"] = gpt4(args, args.prompt_path + "gen_task.txt", json.dumps(tags))
+        task["Task instruction"] = gpt4o_mini(args, args.prompt_path + "gen_task.txt", json.dumps(tags))
         print(task)
 
         task_root_path = args.step_task_path
