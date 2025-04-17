@@ -87,7 +87,7 @@ Our dataset is available in [huggingface](https://huggingface.co/datasets/Starry
 
 ## NavGen Pipline
 
-After completing the preparations, you can now refer to the [guide](https://github.com/HCPLab-SYSU/LH-VLNnav_gen/README.md) to generate your LH-VLN task!
+After completing the preparations, you can now refer to the [guide](https://github.com/sxshco/LH-VLN/tree/master/nav_gen#readme) to generate your LH-VLN task!
 
 ## Timeline
 
