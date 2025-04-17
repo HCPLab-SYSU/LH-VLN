@@ -85,7 +85,7 @@ LH-VLN
 
 Our dataset is available in [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN). Thanks a lot for your patience!
 
-## NavGen Pipline
+## NavGen Pipeline
 
 After completing the preparations, you can now refer to the [guide](https://github.com/sxshco/LH-VLN/tree/master/nav_gen#readme) to generate your LH-VLN task!
 
