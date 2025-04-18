@@ -1,5 +1,7 @@
 <div align="center" style="font-family: charter;">
-<h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
+
+ <h1>Towards Long-Horizon Vision-Language Navigation:</br> Platform, Benchmark and Method (CVPR-25)</h1>
+ 
 <img src="static/images/1-intro.png" width="90%"/>
 <br />
 
@@ -83,7 +85,7 @@ LH-VLN
 
 ## LHPR-VLN Dataset
 
-Our dataset is available in [huggingface](https://huggingface.co/datasets/Starry123/LHPR-VLN). Thanks a lot for your patience!
+Our dataset is now available in [Hugging Face](https://huggingface.co/datasets/Starry123/LHPR-VLN) and [ModelScope](https://modelscope.cn/datasets/starry123/LHPR-VLN). Thanks a lot for your patience!
 
 ## NavGen Pipeline
 
@@ -96,6 +98,7 @@ After completing the preparations, you can now refer to the [guide](https://gith
 ## Acknowledgement
 
 We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything`. Thanks for their contribution!!
+
 
 ## Citation
 
