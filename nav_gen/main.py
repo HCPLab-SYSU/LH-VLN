@@ -8,6 +8,13 @@ from split_task import split_traj, gen_step_task
 nav_gen_path = os.getcwd()
 project_path = os.path.dirname(nav_gen_path)
 
+if not os.path.exists(nav_gen_path + '/task'):    # for LH-VLN task
+    os.makedirs(nav_gen_path + '/task')
+if not os.path.exists(nav_gen_path + '/step_task'):    # for step-by-step task
+    os.makedirs(nav_gen_path + '/step_task')
+if not os.path.exists(nav_gen_path + '/logs'):    # for logs
+    os.makedirs(nav_gen_path + '/logs')
+
 def read_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--API_KEY', type=str, help="api key for gpt")
