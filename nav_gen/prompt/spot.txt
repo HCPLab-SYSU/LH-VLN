@@ -1,0 +1,5 @@
+Spot in simulator is an agile, quadrupedal robot. 
+Action: Spot support three kinds of action: move_forward, turn_left and turn_right.
+Sensors: Spot is equipped with three RGB cameras at a height of 0.5 meters in front, left and right to obtain embodied images in these three directions.
+Mobility: Spot’s four-legged design allows it to navigate challenging terrains, including stairs, rocky surfaces, and cluttered environments.
+Use: As spot is shaped like a dog, it can do some work for human in domestic scenes. It has a simple robotic arm, but is positioned lower (0.5 meters) and can perform some simple grabbing.

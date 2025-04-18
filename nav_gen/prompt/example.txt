@@ -1,0 +1,11 @@
+Here is an example of the INPUT and OUTPUT:
+INPUT:
+```
+scene: {"Region 0: Bedroom": ["bookshelf", "toy", "lamp", "whiteboard", "bed", "nightstand", "door", "hanging clothes", "picture", "rug", "light fixture", "bag", "chest of drawers", "basket of something", "box", "clothes rack", "shoe"], "Region 3: Bathroom": ["door", "toilet", "bin", "toilet brush", "picture", "soap dispenser", "toilet paper", "sink", "sink cabinet"], "Region 4: Office": ["picture", "stationery", "statue", "ornament", "box", "folder", "printer", "stool", "bin", "plant", "computer", "mouse", "keyboard", "remote control", "chair", "water dispenser", "cushion",, "desk", "light fixture"]}
+robot: "Spot in simulator is an agile, quadrupedal robot. \nAction: Spot support three kinds of action: move_forward, turn_left and turn_right.\nSensors: Spot is equipped with three RGB cameras at a height of 0.5 meters in front, left and right to obtain embodied images in these three directions.\nMobility: Spot’s four-legged design allows it to navigate challenging terrains, including stairs, rocky surfaces, and cluttered environments.\nUse: As spot is shaped like a dog, it can do some work for human in domestic scenes. It has a simple robotic arm, but is positioned lower (0.5 meters) and can perform some simple grabbing."
+```
+OUTPUT:
+```
+{"Task instruction": "take the bag in bedroom to the desk in office",
+ "Subtask list": ["Move_to('bag_0')", "Grab('bag')", "Move_to('desk_4')", "Release('bag')"]}
+```

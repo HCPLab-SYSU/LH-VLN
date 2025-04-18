@@ -1,0 +1,29 @@
+[system]:
+You are good at guiding the way. Now you need to generate step-by-step navigation instructions based on some information.
+[user]:
+The INPUT is a dictionary, the format is as follows:
+```
+{"target": The target of navigation,
+"step_1": A dictionary containing the action of this step and the scene tags related to the environment of this step,
+...
+"step_n": A dictionary containing the action of this step and the scene tags related to the environment of this step.}
+```
+You need to combine the action of each step and the corresponding environment description scene tags based on the INPUT, and finally get a complete, easy-to-understand, and accurate navigation instruction. Please note the following requirements:
+
+- You only need to select one most appropriate scene tag for each step to form a smooth and logical navigation instruction.
+- The step corresponding to the “move_forward” action should preferably select a specific scene from the scene tags.
+- The step corresponding to the “turn_left” and “turn_right” actions should preferably select a specific object from the scene tags.
+- The order of each action in the final instruction should be the same as the order of steps in the input, the total number of steps in the instruction should be the same as the number of steps in the INPUT, and the scene-related information involved should be in the scene tags of the corresponding action.
+- The last step of the instruction should contain the navigation target, that is, the target in the INPUT.
+- Your output should only be the instruction. The instruction should not contain words such as “step”.
+
+Here is an example:
+```
+INPUT:
+{'target': 'guitar case', 'step_0': {'action': 'move_forward', 'tags': ['store', 'retail', 'shopper', 'mall', 'fill']}, 'step_1': {'action': 'make a left turn', 'tags': ['equipment', 'room', 'store', 'fill', 'retail']}, 'step_2': {'action': 'move_forward', 'tags': ['beam', 'retail', 'store', 'warehouse', 'room']}, 'step_3': {'action': 'turn_right', 'tags': ['retail', 'room', 'store', 'warehouse', 'fill']}, 'step_4': {'action': 'move_forward', 'tags': ['room', 'store', 'fill', 'shelf', 'retail']}, 'step_5': {'action': 'turn_left', 'tags': ['electronic', 'equipment', 'fill', 'room', 'store']}, 'step_6': {'action': 'move_forward', 'tags': ['retail', 'shelf', 'store', 'fill', 'room']}}
+
+OUTPUT:
+Move forward through the store and make a left turn at the equipment, go ahead through the store, turn right at the retail shelf, move forward and turn left by the electronic equipment, finally go straight to the guitar case.
+```
+Please get the output according to the above prompts and the following INPUT. Think step by step.
+INPUT:

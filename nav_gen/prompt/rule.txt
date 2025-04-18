@@ -1,0 +1,21 @@
+The task you generate should consist of the following three subtasks:
+"""
+- Move_to("object_region id"): Walk to an object in a region. PAY ATTENTION that "object_region id" SHOULD be composed of the object and the ID of the corresponding region of the object in the input scene.
+- Grab("object"): When the robot move to an object, it may need to grab it. To perform it, the robot need to move to the object first and make sure the robotic arm is empty. "object" should correspond to the object to be grab. PAY ATTENTION that "object" SHOULD be in the input scene.
+- Release("object"): When the robot move to a place and had an object in hand, it can release the object in hands to the place. To perform it, the robot need to move to the place first and make sure the robotic arm is not empty. "object" should correspond to the object to be release. PAY ATTENTION that "object" SHOULD be in the input scene.
+"""
+There are something you need to pay attention to:
+"""
+- Avoid words like "grab" and "release" in instructions.
+- Pay attention that the objects in your task should be limited in 1 to 2 regions. And you should mention these regions in instruction. All of these regions SHOULD be in input scene.
+- The task you generate should be similar to instructions like "Take an object in one region to a certain place in one region, then retrieve an object from that place."
+- The object you take/grab should be portable.
+- You need to generate a task consist of 4 to 6 subtasks.
+- The region id in subtask "Move_to" SHOULD be corresponded to the region in instruction.
+"""
+Your output should be a python dictionary which has two keys:
+"""
+- dictionary["Task instruction"]: A conversational task instruction to describe the task.
+- dictionary["Subtask list"]: A list of subtasks that make up the task.
+"""
+Make sure the task instruction conversational enough, and the task should reasonable.
