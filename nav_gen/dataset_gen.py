@@ -212,5 +212,5 @@ def gen_traj(args):
         'mean task SR': success/total_task if total_task != 0 else 0,
         'mean nav SR': nav_success/nav_total if nav_total != 0 else 0,
     }
-    with open('output/' + str(start) + '_' + str(end) + '_result.json', 'w') as json_file:
+    with open('logs/' + str(start) + '_' + str(end) + '_result.json', 'w') as json_file:
         json.dump(result, json_file, indent=4)
