@@ -45,7 +45,7 @@ conda create -n lhvln python=3.9
 conda activate lhvln
 ```
 
-We uses [Habitat-Sim](https://github.com/facebookresearch/habitat-sim/tree/main) as simulator, which can be [built from source](https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md#build-from-source) or installed from conda:
+We use [Habitat-Sim](https://github.com/facebookresearch/habitat-sim/tree/main) as simulator, which can be [built from source](https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md#build-from-source) or installed from conda:
 
 ```bash
 conda install habitat-sim headless -c conda-forge -c aihabitat
@@ -61,7 +61,7 @@ pip install -r requirements.txt
 
 ### Data
 
-We use [HM3D](https://aihabitat.org/datasets/hm3d/) as the scene dataset. You can download the splits required by following the command below. Note that you need to submit an application to [Matterport](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data) before using it. For more information, please refer to [this link](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d).
+We use [HM3D](https://aihabitat.org/datasets/hm3d/) as the scene dataset. You can download the splits we need by following the command below. Note that you need to submit an application to [Matterport](https://matterport.com/legal/matterport-end-user-license-agreement-academic-use-model-data) before using it. For more information, please refer to [this link](https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md#habitat-matterport-3d-research-dataset-hm3d).
 
 ```bash
 python -m habitat_sim.utils.datasets_download --username <api-token-id> --password <api-token-secret> --uids hm3d_train_v0.2
@@ -89,7 +89,7 @@ Our dataset is now available in [Hugging Face](https://huggingface.co/datasets/S
 
 ## NavGen Pipeline
 
-After completing the preparations, you can now refer to the [guide](https://github.com/sxshco/LH-VLN/tree/master/nav_gen#readme) to generate your LH-VLN task!
+After completing the preparations, you can now refer to the [guide](https://github.com/HCPLab-SYSU/LH-VLN/tree/master/nav_gen#readme) to generate your LH-VLN task!
 
 ## Timeline
 
