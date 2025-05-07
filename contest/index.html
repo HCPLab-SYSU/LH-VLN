@@ -1,0 +1,481 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> -->
+<!-- saved from url=(0028)https://mayuelala.github.io/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">	
+<!-- 指定了该页面对XHTML文档的兼容声明，使用XHTML规范，与HTML5具有对应关系 -->
+
+
+<head>
+	<!-- <link rel="shortcut icon" href="myIcon.ico"> -->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<!-- <meta name="keywords" content="SYSU, PCL, MBZUAI, SUST"> -->
+	<meta name="description" content="SYSU">
+	<!-- <meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
+	<meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" /> -->
+	<link rel="stylesheet" href="jemdoc.css" type="text/css">
+	<title>LHVLN-contest</title>
+	<link href="./public/index.css" rel="stylesheet" />
+	<link href="./public/media.css" rel="stylesheet" />
+	<link href="./public/sidebars.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./public/workshop.css">
+	<style>
+		.footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 20px;
+            padding: 20px 10%;
+        }
+
+		.speaker {
+			text-align: center;
+			width: calc(25%);
+			box-sizing: border-box;
+		}
+
+		.speaker img {
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+			margin-bottom: 10px;
+		}
+
+		.speaker p {
+			margin: 5px 0;
+		}
+
+		@media (max-width: 768px) {
+			.speaker {
+				width: calc(50% - 20px);
+			}
+		}
+
+		@media (max-width: 480px) {
+			.speaker {
+				width: 100%;
+			}
+		}
+	</style>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+
+		.smaller-image {
+			width: 20%;
+		}
+
+		.container {
+			position: relative;
+			display: inline-block;
+		}
+
+		.image {
+			display: block;
+			border-radius: 10px;
+			max-width: 100%;
+		}
+
+		.video-label {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			background-color: #ea3323;
+			color: white;
+			padding: 0px 10px;
+			border-radius: 3px;
+			font-weight: bold;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			width: 40px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: small;
+		}
+
+		.research-hightlight {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			/* 5列 */
+			/* grid-template-rows: repeat(4, 1fr);  */
+			gap: 10px;
+			/* 网格项之间的间隙 */
+		}
+
+		.arxiv-label {
+			position: absolute;
+			top: 10px;
+			left: -5px;
+			background-color: #a624a6;
+			color: white;
+			padding: 0px 10px;
+			border-radius: 3px;
+			font-weight: bold;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			width: 40px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: x-small;
+		}
+	</style>
+
+	<style>
+		.video-container {
+			text-align: center;
+		}
+
+		iframe {
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+
+
+	<script type="text/javascript" src="./jquery-1.12.4.min.js"></script>
+	<meta name="google-site-verification" content="RmRCKoAXAT6rtzTsOTkyvuJiKVINXoP9VDPktJ0Hl3Q" />
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1163.0" data-gr-ext-installed="">
+	<div id="layout-content" style="margin-top:25px">
+		<div class="background-image" style="position: relative; width: 100%; height: auto;">
+			<img src="imgs/background.jpg" alt="Background Image" style="width: 100%; height: auto; display: block;">
+			<div class="mask"
+				style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1;">
+			</div>
+			<div class="content"
+				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; color: white;">
+				<h1 style="color: white;">
+					<strong>MMSP Workshop
+						<!-- <br> Social Mobile Manipulation Challenge -->
+						<br></strong>
+				</h1>
+				时间略<br>
+				地点略
+				<section class="links">
+					<ul>
+						<a href="#challenge-details" rel="noreferrer">
+							<li>
+								<span>Schedule Details</span>
+							</li>
+						</a>
+						<a href="" rel="noreferrer">
+							<li>
+								<span>LeaderBoard (Coming Soon)</span>
+							</li>
+						</a>
+						<a href="#organizers" rel="noreferrer">
+							<li>
+								<span>Organizers</span>
+							</li>
+						</a>
+						<!-- 这里填问卷链接 -->
+						<!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbxXDwFV-g7x_RhciBWep3b1Hldt0YRlqr1ELAKBwoPVIJeQ/viewform?usp=sharing"
+							rel="noreferrer" target="_blank">
+							<li style="background-color: green">
+								<span>Pre-Registration</span>
+							</li>
+						</a> -->
+					</ul>
+				</section>
+			</div>
+		</div>
+		<div style="height: 20px;"></div>
+		<!-- Overall -->
+		<section style="text-align: center; width: 95%; margin: 0 auto;">
+			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
+				The 1st MMSP Workshp based on the insights presented in the <a href="https://github.com/HCPLab-SYSU/LH-VLN">
+					LH-VLN</a>—focuses on complicated long‑horizon VLN tasks. Our LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
+				<!-- <img src="imgs/hssd.png" alt="Background Image" style="width: 100%; height: auto; display: block;"> -->
+				<img src="imgs/hm3d.jpeg" alt="Background Image" style="width: 100%; height: auto; display: block;">
+			</p>
+			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: center;">
+				Figure 1: Environment where agents execute navigation tasks.<br>
+			</p>
+			
+
+			<!-- <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: center;">
+			<h3>BASELINE</h3>
+			</p> -->
+			<section class="details" style="text-align: justify; margin-top: 20px;">
+				<div style="display: flex; flex-direction: column; align-items: center; width: 100%; ">
+					<h2>Challenge</h2>
+				</div>
+			</section>
+			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
+				<!-- <strong> Hierarchical interaction: </strong> <br>To simulate the agent interaction mode with a
+				hierarchical knowledge structure in the environment.<br>
+
+				<strong> Horizontal interaction: </strong> <br>To simulate the "passer-by interaction scene".<br> -->
+
+
+
+
+				<!-- <strong> VLMZero-Shot: </strong> <br>By inputting the global scene information and current observations
+				into a vision-language model (VLM),we use prompt engineering to output the actions that the agent should
+				execute.<br>
+
+				<strong> Single Semantic Map:</strong><br>Goal-Oriented Semantic Exploration for 2D semantic
+				mapping,while
+				employing the FBE algorithm as the
+				global planner incombination with the FMM planning algorithm for local planning.<br>
+
+				<strong> Random: </strong><br>In the robot's action space, actions are randomly sampled for execution,
+				or
+				target points are randomly sampled in the planning space, and planning algorithms are used to solve for
+				them.<br>
+
+				<strong> LLM-Based Planning: </strong><br>Using the Co-NavGPT,we employ a large language model (LLM) as
+				a
+				planner for multi-agent systems.The merged observation map of the agents is converted intoa textual
+				description,which is then processed by the LLM to perform goal planning for multiple agents.<br>
+
+				<strong>LLM-Planner </strong> <br>is a few-shot grounded planning model.Different from common planning
+				models,LLM Planner uses LLMs to generate plans directly instead of ranking acceptable skills, reducing
+				the need for sufficient prior knowledge of the environment and the number of calls to LLMs.Re-planning
+				of LLM-Planner allow sit to dynamically adjust the planning based on current observations,resulting in
+				more informed plans. -->
+
+			</p>
+
+
+			<!-- <div class="video-container">
+				<script src='//player.polyv.net/resp/vod-player/latest/player.js'></script>
+				<div id='plv_t1c133894e726cf17eb9313d4d98346d_t'></div>
+				<script>
+					var player = polyvPlayer({
+						'wrap': '#plv_t1c133894e726cf17eb9313d4d98346d_t',
+						'width': '600',
+						'height': '338',
+						'vid': 't1c133894e726cf17eb9313d4d98346d_t',
+						'playsafe': '' // 播放加密视频的凭证, 取值参考文档: https://help.polyv.net/index.html#/vod/api/playsafe/token/create_token 
+					});
+				</script>
+
+			</div> -->
+
+
+
+			<!-- <p style="text-align:center">
+				Vedio1: Two Stretch collaborate to build the scene graph<br>
+			</p> -->
+
+			<!-- <p style="text-align: left;">
+				<strong>
+					Benchmark1: Scene Graph Collaborative Exploration.
+				</strong><br>
+
+				In traditional single-robot systems, the robot explores unknown areas sequentially, gradually building
+				up the scene graph. However, this approach is often inefficient in large scale or dynamically changing
+				environments, limiting the speed of scene graph construction and the richness of information obtained.
+				Introducing multi-agent scene graph construction can significantly improve the efficiency and quality of
+				this process. Multiple robots work collaboratively, sharing information and merging their views to build
+				a unified scene graph. While each robot independently perceives and maps parts of the environment, the
+				agents share map data, update object semantic labels, and synchronize their positions via wireless
+				communication, effectively boosting mapping efficiency.
+			</p> -->
+
+			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
+				<img src="imgs/demo.gif" alt="Background Image" style="width: 100%; height: auto; display: block;">
+			</p>
+			<p style="text-align:center">
+				Video 1: Agent executing the LH-VLN task.
+			</p>
+			<!-- <p style="text-align:center">
+				Vedio1: Two Go2 collaborate to grab a bottle of beverage and interact with humans during the process<br>
+			</p> -->
+
+			<p style="text-align: left;">
+				<strong>
+					Benchmark: LHPR-VLN.
+				</strong><br>
+
+				The tasks within this benchmark all consist of multiple single-stage subtasks. Throughout navigation, the agent acquires observational data from three perspectives (+60° , 0° , −60° ) and is permitted to execute fundamental actions: turn left, move forward, turn right, and stop. When the agent selects the “stop” action, the sub-task is deemed complete, and task success is evaluated based on the agent’s final positional state relative to the target.
+				<br>
+				For each single-stage navigation task, the agent must approach within a 1-meter geodesic distance of the target object, ensuring the object is positioned within a 60-degree horizontal field of view to maintain task fidelity.<br>
+
+			</p>
+		</section>
+
+
+		<!-- Competition Content -->
+		<section id="challenge-details">
+			<section class="details" style="text-align: justify; margin-top: 20px;">
+				<div style="display: flex; flex-direction: column; align-items: center; width: 100%; ">
+					<h2><strong>Schedule details</strong></h2>
+					<!-- <div style="margin-top: -10px"></div> -->
+					<!-- <strong style="color: red;">See <a href="">Competition Manual (Coming Soon)</a> for more
+						details</strong> -->
+					<!-- <div style="margin-top: 10px"></div> -->
+				</div>
+
+			</section>
+			<!-- <hr> -->
+			<!-- <div style="margin-top: -10px"></div> -->
+			<!-- <h3>Track 1: Rigid Object Manipulation</h3> -->
+			<div
+				style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+				<!-- <video autoplay loop muted style="width: 40%;">
+					<source src="https://www.bilibili.com/video/BV1KbPdeKE1K?t=3.0" type="video/mp4">
+				</video> -->
+
+				<!-- <div style="margin-top: 10px;">
+					<a href="https://github.com/pzhren/InfiniteWorld"
+						style="display: block; color: blue; text-decoration: none;">SMM</a><br>
+				</div> -->
+			</div>
+			<div style="margin-top: -10px"></div>
+			<h4>Task Overview</h4>
+			<div style="margin-top: -10px"></div>
+			The 1st MMSP Workshp focuses on complicated long‑horizon VLN tasks. LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
+
+			<!-- <h4>Dataset</h4>
+			<div style="margin-top: -10px"></div>
+			We will provide two main datasets for this challenge. The first dataset includes various human-robot
+			interaction tasks, designed for hierarchical knowledge-based interactions. The second dataset involves
+			robot-robot interactions where multiple agents collaborate on equal terms to complete tasks.
+			These datasets are currently under development and are expected to be released by 03/01/2025. In case of
+			delays, we plan to provide smaller, simplified versions of the datasets to ensure participants can begin
+			their work on time. -->
+
+			<!-- <h4>Ethical considerations</h4>
+			<div style="margin-top: -10px"></div>
+			Since the challenge involves the development of autonomous agents, careful attention is required when
+			transferring policies trained in simulation to real-world environments. Proper validation processes should
+			be established to avoid unintended behaviors in robots, especially in human-robot interaction scenarios. -->
+			<h4>Submission evaluation</h4>
+			<!-- <p>The competition evaluation consists of two stages.</p> -->
+			The competition evaluation consists of two stages.
+			
+			In the first stage, we will release the training data along with some test data. Participants will train their models on the training data and self-assess the results. These results will serve as the basis for the ranking in the first stage. We require the participants advancing to the second stage to publicly release all model code and weights, and submit a corresponding technical report as part of the entry. The technical report will account for 30% of the final evaluation for awarding.</p>
+		  
+			In the second stage, participants who are selected in the first stage will be required to submit a container that meets the requirements, which will then be tested by the competition organizers on an undisclosed test set, and the final ranking will be based on these results.</p>
+		  
+			Detailed requirements are as follows:
+			<ul>
+			  <li>The model parameter size must not exceed 8B, and it must be capable of inference on a 3090 or equivalent machine. Based on this, the organizers will conduct testing and provide results within 3 days of submission.</li>
+			  <li>The Docker container (including model weights) must not exceed 20GB and must pass validation using the script provided by the organizers to be considered valid.</li>
+			  <li>The use of closed-source large model APIs is not allowed.</li>
+			</ul>
+			
+		  
+
+			<!-- <h4>Submission evaluation</h4>
+			<div style="margin-top: -10px"></div>
+			Participants will submit their solution files, which will be evaluated using our simulation platform based
+			on NVIDIA's Isaac Sim. We will use the evalAI platform to manage submissions and rerun code for the top
+			submissions. Participants are expected to submit both their code and a ReadMe file with clear instructions
+			on how to execute their solution. -->
+			<h4>Timeline</h4>
+			<div style="margin-top: -10px"></div>
+			略
+			<h4>Registration</h4>
+			<div style="margin-top: -10px"></div>
+			略
+			<h4>Challenge guide</h4>
+			<div style="margin-top: -10px"></div>
+			略
+			
+			<!-- <h4>Timeline</h4>
+			<div style="margin-top: -10px"></div>
+			
+The challenge will officially kick off on April 10, 2025, followed by a registration period closing at 23:59:59 UTC+8 on April 30, 2025. Participants must submit their entries by 23:59:59 UTC+8 on May 25, 2025, and the final results will be announced at 23:59:59 UTC+8 on June 4, 2025. All key milestones—from registration to result announcement—are scheduled in UTC+8 to ensure clarity and alignment for participants. -->
+			<!-- <h4>Todo</h4>
+			<div style="margin-top: -10px"></div>
+			We will release the registration portal for the competition in the future. Please stay tuned. -->
+
+			<!-- <h4>Challenge organizers</h4>
+			<div style="margin-top: -10px"></div>
+			The challenge is organized by Xiaodan Liang (MBZUAI), Rongtao Xu (MBZUAI), Pengzhen Ren (Pengcheng
+			Laboratory), Bingqian Lin (Shanghai Jiao Tong University), Xiaojun Chang (University of Technology Sydney),
+			Ivan Laptev (MBZUAI), Ian Reid(MBZUAI), Cewu Lu (Shanghai Jiao Tong University), Mingfei Han (MBZUAI), and
+			Xiwen Liang (Sun Yat-sen University).
+			<br> -->
+		</section>
+
+		<div style="margin-top: 20px"></div>
+		<!-- <hr> -->
+
+
+		<!-- Organizer -->
+		<section id="organizers">
+			<a class="anchor" id="organizer"></a>
+			<section class="details" style="text-align: justify; margin-top: 10px;">
+				<div style="display: flex; flex-direction: column; align-items: center; width: 100%; ">
+					<h2>Organizers</h2>
+				</div>
+				<div class="grid" style="max-width: 90%;">
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\liuyang.jpg" />
+							<figcaption><b><a href="https://yangliu9208.github.io/">Yang
+										Liu</a></b><br />Associate professor at SYSU
+									</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\linliang.jpg" />
+							<figcaption><b><a href="http://www.linliang.net/">Liang Lin</a></b><br />Professor at SYSU
+							</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\sxs.jpg" />
+							<figcaption><b><a href="https://github.com/sxshco">Xingshuai Son</a></b><br />MSc Student at SYSU
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</section>
+		</section>
+		<!-- <div style="margin-top: 100px"></div>
+		<hr> -->
+
+		
+
+		<!-- <div style="margin-top: 30px"></div> -->
+
+		<!-- <div style="margin-top: 60px;">
+					<div style="height: 30px;"></div>
+				</div> -->
+	</div>
+	
+	<!-- <footer class="footer">
+		<p>&copy; SMM</p>
+	</footer> -->
+	
+	<div class="jvectormap-tip"></div>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
+		<style>
+			div.grammarly-desktop-integration {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0, 0, 0, 0);
+				white-space: nowrap;
+				border: 0;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			div.grammarly-desktop-integration:before {
+				content: attr(data-content);
+			}
+		</style>
+		<div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
+			data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
+		</div>
+	</template></grammarly-desktop-integration>
+
+</html>

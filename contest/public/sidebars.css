@@ -1,0 +1,75 @@
+.sidebarsWrapper {
+    height: 100%;
+    right: 0;
+    position: fixed;
+    width: 200px;
+}
+
+.sidebars {
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.sidebars .barWrapper {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebars .barWrapper span {
+    -webkit-transform: translate(0, -15px);
+    -ms-transform: translate(0, -15px);
+    transform: translate(0, -15px);
+    margin-right: 10px;
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: opacity 0.45s, color 0.3s;
+    -o-transition: opacity 0.45s, color 0.3s;
+    transition: opacity 0.45s, color 0.3s;
+    color: rgba(62, 75, 115, 0.45);
+}
+
+.sidebars .bar {
+    height: 35px;
+    width: 5px;
+    margin-right: 25px;
+    background-color: rgba(62, 75, 115, 0.15);
+    -webkit-transition: background-color 0.3s, margin-right 0.3s;
+    -o-transition: background-color 0.3s, margin-right 0.3s;
+    transition: background-color 0.3s, margin-right 0.3s;
+    margin-bottom: 5px;
+    display: inline-block;
+
+}
+
+.sidebars .barWrapper:hover .bar {
+    background-color: rgba(62, 75, 115, 0.85);
+    margin-right: 30px;
+}
+
+.sidebars .barWrapper:hover span {
+    color: var(--sg1);
+}
+
+.sidebars .barWrapper.inview .bar {
+    background-color: rgba(62, 75, 115, 0.85);
+}
+
+.sidebars .barWrapper.inview span {
+    color: var(--sg1);
+}
+
+@media only screen and (max-width:1450px) {
+    .sidebars {
+        display: none;
+    }
+
+    .sidebarsWrapper {
+        display: none;
+    }
+}

@@ -1,0 +1,321 @@
+div.speaker {
+    margin: 0em 0;
+}
+
+div.speaker div.speaker-pic {
+    text-align: center;
+}
+
+div.speaker p.speaker-abstract,
+div.speaker p.speaker-bio {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+#organizers {
+    margin-top: 1em;
+}
+
+.people-pic {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.people-name {
+    margin: 10px 0 10px;
+}
+
+.people-name h6 {
+    margin: 4px 0;
+    font-weight: 100;
+    font-size: 11px;
+}
+
+@media (max-width:1000px) {
+    div.speaker img.people-pic {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .people-pic {
+        max-width: 65px;
+        max-height: 65px;
+    }
+
+    .people-name {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .people-name h6 {
+        font-size: 9px;
+    }
+}
+
+.paper-pic {
+    max-width: 200px;
+    max-height: 100px;
+    padding: 0;
+}
+
+div.award {
+    padding: 15px 0px 15px 25px;
+}
+
+div.award h3 {
+    font-size: 15px;
+}
+
+span.award-sponsor {
+    color: #666;
+    font-size: 13px;
+}
+
+span.award-sponsor a,
+span.award-other a {
+    text-decoration: none;
+    border: 0;
+}
+
+span.award-sponsor img {
+    height: 18px;
+    margin: 0 5px;
+}
+
+div.award:last-child {
+    padding-top: 30px;
+}
+
+span.award-other img {
+    height: 18px;
+    margin-top: 2px;
+    vertical-align: top;
+}
+
+.table.schedule tr.noline td {
+    border-top: none;
+}
+
+.table.schedule tr td {
+    padding-top: 0;
+    padding-bottom: 8px;
+}
+
+.grid {
+    max-width: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.grid-item {
+    min-width: 200px;
+    max-width: 200px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 200px;
+    flex: 1 1 200px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-item figure {
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.05); */
+}
+
+.grid-item figure img {
+    display: block;
+    max-width: 100%;
+}
+
+.grid-item figcaption {
+    display: block;
+    padding: .625rem .5rem;
+    /* background: #ffffff; */
+}
+
+.gridorg-item {
+    min-width: 160px;
+    max-width: 160px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 160px;
+    flex: 1 1 160px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-bottom: 1rem;
+}
+
+.gridorg-item figure {
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.05); */
+}
+
+.gridorg-item figure img {
+    display: block;
+    max-width: 100%;
+}
+
+.gridorg-item figcaption {
+    display: block;
+    padding: .625rem .5rem;
+    /* background: #ffffff; */
+}
+
+.gridcom-item {
+    min-width: 33%;
+    max-width: 33%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 33%;
+    flex: 1 1 33%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-bottom: 1rem;
+}
+
+.gridcom-item figure {
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.05); */
+}
+
+.gridcom-item figure img {
+    display: block;
+    max-width: 100%;
+}
+
+.gridcom-item figcaption {
+    display: block;
+    padding: .625rem .5rem;
+    /* background: #ffffff; */
+}
+
+
+/* 可以根据视频类型添加不同的样式 */
+.type1 {
+    background-color: lightblue;
+}
+
+.type2 {
+    background-color: lightcoral;
+}
+
+.type3 {
+    background-color: lightgreen;
+}
+
+.type4 {
+    background-color: lightyellow;
+}
+
+.type5 {
+    background-color: lightpink;
+}
+
+.video-container {
+    display: flex;
+    /* 使用Flexbox布局 */
+    justify-content: center;
+    /* 水平居中 */
+    margin-bottom: 20px;
+}
+
+.task-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    width: 90%;
+    padding: 1;
+    /* 去除左右内边距 */
+    margin: 20px 0;
+    /* 水平居中 */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.thumbnail-container .viewer {
+    /* width: 100%; */
+    aspect-ratio: 1;
+    /* 强制保持正方形比例 */
+    background: #ccc;
+    /* 灰色背景 */
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.thumbnail-container .viewer.selected {
+    border-color: black;
+}
+
+#interactive-container {
+    display: none;
+    /* 默认隐藏 */
+    justify-content: space-between;
+}
+
+#interactive-viewer,
+#info-box {
+    width: 50%;
+    aspect-ratio: 1;
+    /* 强制保持正方形比例 */
+    background: #ccc;
+    margin: 20px 0;
+    /* 顶部和底部的间距 */
+    float: left;
+    /* 左对齐 */
+    position: relative;
+}
+
+#info-box {
+    background: #f0f0f0;
+    /* 更浅的背景颜色区分内容 */
+    margin: 20px 0;
+    /* 顶部和底部的间距 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5列 */
+    grid-template-rows: repeat(4, 1fr);
+    /* 4行 */
+    gap: 10px;
+    /* 网格项之间的间隙 */
+}
+
+.grid-item2 {
+    border: 1px solid #ccc;
+    /* 边框，可以根据需要调整 */
+    padding: 10px;
+    /* 内边距，可以根据需要调整 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
