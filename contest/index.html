@@ -148,13 +148,14 @@
 			</div>
 			<div class="content"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; color: white;">
-				<h1 style="color: white;">
-					<strong>MMSP Workshop
+				<h1 style="color: white; ; font-size: 32px;">
+					<strong>MMSP 2025 Embodied AI Challenge:<br>
+						Long-horizon Vision-Language Navigation Challenge
 						<!-- <br> Social Mobile Manipulation Challenge -->
 						<br></strong>
 				</h1>
-				时间略<br>
-				地点略
+				September 21 to September 23, 2025<br>
+				Beijing, China
 				<section class="links">
 					<ul>
 						<a href="#challenge-details" rel="noreferrer">
@@ -172,13 +173,6 @@
 								<span>Organizers</span>
 							</li>
 						</a>
-						<!-- 这里填问卷链接 -->
-						<!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbxXDwFV-g7x_RhciBWep3b1Hldt0YRlqr1ELAKBwoPVIJeQ/viewform?usp=sharing"
-							rel="noreferrer" target="_blank">
-							<li style="background-color: green">
-								<span>Pre-Registration</span>
-							</li>
-						</a> -->
 					</ul>
 				</section>
 			</div>
@@ -187,8 +181,8 @@
 		<!-- Overall -->
 		<section style="text-align: center; width: 95%; margin: 0 auto;">
 			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
-				The 1st MMSP Workshp based on the insights presented in the <a href="https://github.com/HCPLab-SYSU/LH-VLN">
-					LH-VLN</a>—focuses on complicated long‑horizon VLN tasks. Our LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
+				The 1st Long-horizon Vision-Language Navigation Challenge based on the insights presented in the <a href="https://github.com/HCPLab-SYSU/LH-VLN">
+					LH-VLN</a>—hosted as the “Embodied AI Challenge” track of the IEEE 27th International Workshop on Multimedia Signal Processing (<a href="https://attend.ieee.org/mmsp-2025/">MMSP 2025</a>)—focuses on complicated long-horizon VLN tasks. Our LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
 				<!-- <img src="imgs/hssd.png" alt="Background Image" style="width: 100%; height: auto; display: block;"> -->
 				<img src="imgs/hm3d.jpeg" alt="Background Image" style="width: 100%; height: auto; display: block;">
 			</p>
@@ -205,78 +199,7 @@
 					<h2>Challenge</h2>
 				</div>
 			</section>
-			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
-				<!-- <strong> Hierarchical interaction: </strong> <br>To simulate the agent interaction mode with a
-				hierarchical knowledge structure in the environment.<br>
 
-				<strong> Horizontal interaction: </strong> <br>To simulate the "passer-by interaction scene".<br> -->
-
-
-
-
-				<!-- <strong> VLMZero-Shot: </strong> <br>By inputting the global scene information and current observations
-				into a vision-language model (VLM),we use prompt engineering to output the actions that the agent should
-				execute.<br>
-
-				<strong> Single Semantic Map:</strong><br>Goal-Oriented Semantic Exploration for 2D semantic
-				mapping,while
-				employing the FBE algorithm as the
-				global planner incombination with the FMM planning algorithm for local planning.<br>
-
-				<strong> Random: </strong><br>In the robot's action space, actions are randomly sampled for execution,
-				or
-				target points are randomly sampled in the planning space, and planning algorithms are used to solve for
-				them.<br>
-
-				<strong> LLM-Based Planning: </strong><br>Using the Co-NavGPT,we employ a large language model (LLM) as
-				a
-				planner for multi-agent systems.The merged observation map of the agents is converted intoa textual
-				description,which is then processed by the LLM to perform goal planning for multiple agents.<br>
-
-				<strong>LLM-Planner </strong> <br>is a few-shot grounded planning model.Different from common planning
-				models,LLM Planner uses LLMs to generate plans directly instead of ranking acceptable skills, reducing
-				the need for sufficient prior knowledge of the environment and the number of calls to LLMs.Re-planning
-				of LLM-Planner allow sit to dynamically adjust the planning based on current observations,resulting in
-				more informed plans. -->
-
-			</p>
-
-
-			<!-- <div class="video-container">
-				<script src='//player.polyv.net/resp/vod-player/latest/player.js'></script>
-				<div id='plv_t1c133894e726cf17eb9313d4d98346d_t'></div>
-				<script>
-					var player = polyvPlayer({
-						'wrap': '#plv_t1c133894e726cf17eb9313d4d98346d_t',
-						'width': '600',
-						'height': '338',
-						'vid': 't1c133894e726cf17eb9313d4d98346d_t',
-						'playsafe': '' // 播放加密视频的凭证, 取值参考文档: https://help.polyv.net/index.html#/vod/api/playsafe/token/create_token 
-					});
-				</script>
-
-			</div> -->
-
-
-
-			<!-- <p style="text-align:center">
-				Vedio1: Two Stretch collaborate to build the scene graph<br>
-			</p> -->
-
-			<!-- <p style="text-align: left;">
-				<strong>
-					Benchmark1: Scene Graph Collaborative Exploration.
-				</strong><br>
-
-				In traditional single-robot systems, the robot explores unknown areas sequentially, gradually building
-				up the scene graph. However, this approach is often inefficient in large scale or dynamically changing
-				environments, limiting the speed of scene graph construction and the richness of information obtained.
-				Introducing multi-agent scene graph construction can significantly improve the efficiency and quality of
-				this process. Multiple robots work collaboratively, sharing information and merging their views to build
-				a unified scene graph. While each robot independently perceives and maps parts of the environment, the
-				agents share map data, update object semantic labels, and synchronize their positions via wireless
-				communication, effectively boosting mapping efficiency.
-			</p> -->
 
 			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
 				<img src="imgs/demo.gif" alt="Background Image" style="width: 100%; height: auto; display: block;">
@@ -306,46 +229,19 @@
 			<section class="details" style="text-align: justify; margin-top: 20px;">
 				<div style="display: flex; flex-direction: column; align-items: center; width: 100%; ">
 					<h2><strong>Schedule details</strong></h2>
-					<!-- <div style="margin-top: -10px"></div> -->
-					<!-- <strong style="color: red;">See <a href="">Competition Manual (Coming Soon)</a> for more
-						details</strong> -->
-					<!-- <div style="margin-top: 10px"></div> -->
+
 				</div>
 
 			</section>
-			<!-- <hr> -->
-			<!-- <div style="margin-top: -10px"></div> -->
-			<!-- <h3>Track 1: Rigid Object Manipulation</h3> -->
+
 			<div
 				style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-				<!-- <video autoplay loop muted style="width: 40%;">
-					<source src="https://www.bilibili.com/video/BV1KbPdeKE1K?t=3.0" type="video/mp4">
-				</video> -->
-
-				<!-- <div style="margin-top: 10px;">
-					<a href="https://github.com/pzhren/InfiniteWorld"
-						style="display: block; color: blue; text-decoration: none;">SMM</a><br>
-				</div> -->
 			</div>
 			<div style="margin-top: -10px"></div>
 			<h4>Task Overview</h4>
 			<div style="margin-top: -10px"></div>
 			The 1st MMSP Workshp focuses on complicated long‑horizon VLN tasks. LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
 
-			<!-- <h4>Dataset</h4>
-			<div style="margin-top: -10px"></div>
-			We will provide two main datasets for this challenge. The first dataset includes various human-robot
-			interaction tasks, designed for hierarchical knowledge-based interactions. The second dataset involves
-			robot-robot interactions where multiple agents collaborate on equal terms to complete tasks.
-			These datasets are currently under development and are expected to be released by 03/01/2025. In case of
-			delays, we plan to provide smaller, simplified versions of the datasets to ensure participants can begin
-			their work on time. -->
-
-			<!-- <h4>Ethical considerations</h4>
-			<div style="margin-top: -10px"></div>
-			Since the challenge involves the development of autonomous agents, careful attention is required when
-			transferring policies trained in simulation to real-world environments. Proper validation processes should
-			be established to avoid unintended behaviors in robots, especially in human-robot interaction scenarios. -->
 			<h4>Submission evaluation</h4>
 			<!-- <p>The competition evaluation consists of two stages.</p> -->
 			The competition evaluation consists of two stages.
@@ -360,40 +256,19 @@
 			  <li>The Docker container (including model weights) must not exceed 20GB and must pass validation using the script provided by the organizers to be considered valid.</li>
 			  <li>The use of closed-source large model APIs is not allowed.</li>
 			</ul>
-			
-		  
 
-			<!-- <h4>Submission evaluation</h4>
-			<div style="margin-top: -10px"></div>
-			Participants will submit their solution files, which will be evaluated using our simulation platform based
-			on NVIDIA's Isaac Sim. We will use the evalAI platform to manage submissions and rerun code for the top
-			submissions. Participants are expected to submit both their code and a ReadMe file with clear instructions
-			on how to execute their solution. -->
+		  
 			<h4>Timeline</h4>
 			<div style="margin-top: -10px"></div>
-			略
+			coming soon...
 			<h4>Registration</h4>
 			<div style="margin-top: -10px"></div>
-			略
+			coming soon...
 			<h4>Challenge guide</h4>
 			<div style="margin-top: -10px"></div>
-			略
+			coming soon...
 			
-			<!-- <h4>Timeline</h4>
-			<div style="margin-top: -10px"></div>
-			
-The challenge will officially kick off on April 10, 2025, followed by a registration period closing at 23:59:59 UTC+8 on April 30, 2025. Participants must submit their entries by 23:59:59 UTC+8 on May 25, 2025, and the final results will be announced at 23:59:59 UTC+8 on June 4, 2025. All key milestones—from registration to result announcement—are scheduled in UTC+8 to ensure clarity and alignment for participants. -->
-			<!-- <h4>Todo</h4>
-			<div style="margin-top: -10px"></div>
-			We will release the registration portal for the competition in the future. Please stay tuned. -->
 
-			<!-- <h4>Challenge organizers</h4>
-			<div style="margin-top: -10px"></div>
-			The challenge is organized by Xiaodan Liang (MBZUAI), Rongtao Xu (MBZUAI), Pengzhen Ren (Pengcheng
-			Laboratory), Bingqian Lin (Shanghai Jiao Tong University), Xiaojun Chang (University of Technology Sydney),
-			Ivan Laptev (MBZUAI), Ian Reid(MBZUAI), Cewu Lu (Shanghai Jiao Tong University), Mingfei Han (MBZUAI), and
-			Xiwen Liang (Sun Yat-sen University).
-			<br> -->
 		</section>
 
 		<div style="margin-top: 20px"></div>
@@ -425,8 +300,29 @@ The challenge will officially kick off on April 10, 2025, followed by a registra
 					</div>
 					<div class="speaker">
 						<figure>
+							<img src="imgs\organizers\white.jpg" />
+							<figcaption><b><a href="https://github.com/sxshco">Weixing Chen</a></b><br />PhD Student at SYSU
+							</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
 							<img src="imgs\organizers\sxs.jpg" />
-							<figcaption><b><a href="https://github.com/sxshco">Xingshuai Son</a></b><br />MSc Student at SYSU
+							<figcaption><b><a href="https://github.com/sxshco">Xinshuai Song</a></b><br />MSc Student at SYSU
+							</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\jiangkaixuan.jpeg" />
+							<figcaption><b><a href="https://github.com/kxxxxxxxxxx">Kaixuan Jiang</a></b><br />MSc Student at SYSU
+							</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\zhangyexin.jpg" />
+							<figcaption><b><a href="https://github.com/Liquid-star">Yexin Zhang</a></b><br />Undergraduate at SYSU
 							</figcaption>
 						</figure>
 					</div>
