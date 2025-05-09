@@ -1,0 +1,177 @@
+:root {
+    --bx1: rgba(62, 75, 115, 0.15);
+    --bx1t: rgba(62, 75, 115, 0.35);
+    --sg0: rgb(36, 41, 51);
+    --sg1: rgb(61, 69, 89);
+    --b1: #099cec;
+    --b1t: rgba(9, 156, 252, 0.15);
+    --b2: #107ccc;
+    --white: #fefefe;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(51, 56, 68);
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #099cec;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+pre {
+    background-color: #f5f5f5;
+    color: #4a4a4a;
+    font-size: .875em;
+    overflow-x: auto;
+    padding: 1.25em 1.5em;
+    white-space: pre;
+}
+
+code {
+    word-wrap: normal;
+    color: currentColor;
+    font-size: 0.875rem;
+    padding: 0;
+}
+
+select {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    z-index: -1;
+    top: 0px;
+}
+
+
+.heading {
+    width: 100%;
+}
+
+.content {
+    width: calc(100% - 2rem);
+    max-width: 60rem;
+    margin: auto;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.abstract {
+    /* text-align: left; */
+    /* font-weight: 300; */
+}
+
+.links ul {
+    list-style-type: none;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.links li {
+    box-sizing: border-box;
+    height: 2.5rem;
+    border-radius: 4px;
+    align-items: center;
+    display: inline-flex;
+    padding: 0rem 1rem;
+    color: white;
+    vertical-align: middle;
+    background-color: lightslategray;
+    font-size: 1.25rem;
+    border-width: 0px;
+    border: 0px solid black;
+    transition: all 0.2s;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.links li:hover {
+    background-color: rgb(34, 38, 49);
+}
+
+.links .icon {
+    display: inline-block;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.links .icon img {
+    /* width: 1rem; */
+    vertical-align: middle;
+}
+
+.authors ul,
+.affiliations ul {
+    font-size: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.75rem;
+}
+
+.authors li,
+.affiliations li {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.corresponding p {
+    margin-top: -0.25rem;
+    /*display: inline-block;*/
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.authors li span::after {
+    content: ", "
+}
+
+.authors li:last-child span::after {
+    content: ""
+}
+
+.caption {
+    font-size: 0.95rem;
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 10pt;
+    }
+
+    .links li {
+        margin-right: 0.25rem;
+    }
+
+    .content {
+        /* width: calc(100%; */
+    }
+}
