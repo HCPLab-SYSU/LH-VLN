@@ -27,8 +27,8 @@ class TaskDataset(Dataset):
             for room in data[i]["Object"]:
                 rooms.append(room[1].split(': ')[1])
             data[i]['Object'] = obj
+            data[i]['Region Name'] = rooms
             data[i]['Region'] = region_id
-            data[i]['Room'] = rooms
         self.data.append(data)
 
         self.tasks = reduce(lambda x, y: x + y, self.data)
