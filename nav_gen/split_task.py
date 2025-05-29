@@ -257,12 +257,12 @@ def make_task(args, trail_list):
         index = config["Object"].index(task["target"])
         task["target"] = [config["Object"][index]]
         task['Region'] = [config["Region"][index]]
-        step_former = 0
+        step_former = -1
         for i in range(0, index):
             trail_name = 'trial_' + str(i)
-            step_former += len(config["trial"][trail_name]['pos'])
-        task['start_pos'] = config["trial"]['trial_' + str(index)]['pos'][task["start"]-step_former]
-        task['start_yaw'] = config["trial"]['trial_' + str(index)]['yaw'][task["start"]-step_former]
+            step_former += (len(config["trial"][trail_name]['pos'])-1)
+        task['start_pos'] = config["trial"]['trial_' + str(index)]['pos'][task["start"]-step_former-1]
+        task['start_yaw'] = config["trial"]['trial_' + str(index)]['yaw'][task["start"]-step_former-1]
         task["Task instruction"] = gpt4o_mini(args, args.prompt_path + "gen_task.txt", json.dumps(tags))
         print(task)
 
