@@ -80,13 +80,13 @@ def eval_for_one_task(args, config):
             else:
                 former = nav_step[-1]
                 nav_step.append(step-former)
-            
+                
+            if success == len(task_sim.target):
+                break
+                
             _, _, _, _, geo_dis = task_sim.get_info(success)
             config['Geo dis'].append(geo_dis)
             
-        if success == len(task_sim.target):
-            break
-        
         # get the current target
         obj_target, coord, position, yaw, geo_dis = task_sim.get_info(success)
 

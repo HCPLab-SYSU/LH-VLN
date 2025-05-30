@@ -1,4 +1,3 @@
-from matplotlib import pyplot as plt
 from PIL import Image, ImageEnhance
 import numpy as np
 import shutil
@@ -44,22 +43,29 @@ def display_env(observations, action, save_path, step, obj_target):
     if not(save_path):
         return arr[:3]
 
-    file = save_path + '/temp'
+    base_save_dir = os.path.join(save_path, 'temp')
     if '/' in obj_target:
-        obj_target = obj_target.replace('/', '')
-    # file = save_path + "/success/trial_1"
-    if not os.path.isdir(file):
-        os.mkdir(file)
-    elif os.path.isdir(file) and step == -1:
-        shutil.rmtree(file)
-        os.mkdir(file)
-    if not os.path.isdir(file + "/" +str(step) + "_" + action + "_for_" + obj_target):
-        os.mkdir(file + "/" +str(step) + "_" + action + "_for_" + obj_target)
+        obj_target_sanitized = obj_target.replace('/', '')
+    else:
+        obj_target_sanitized = obj_target
+    
+    if not os.path.isdir(base_save_dir):
+        os.makedirs(base_save_dir) # Use makedirs to create parent dirs if needed
+    elif os.path.isdir(base_save_dir) and step == -1:
+        shutil.rmtree(base_save_dir)
+        os.makedirs(base_save_dir)
+    
+    current_image_folder = os.path.join(base_save_dir, f"{step}_{action}_for_{obj_target_sanitized}")
+    if not os.path.isdir(current_image_folder):
+        os.makedirs(current_image_folder)
 
-    for i, data in enumerate(arr):
-        plt.axis('off')
-        plt.imshow(data)
-        plt.savefig(file + "/" + str(step) + "_" + action + "_for_" + obj_target + "/" + titles[i] + ".png", bbox_inches='tight', pad_inches=0)
+    for i, data_img in enumerate(arr): # Renamed 'data' to 'data_img' for clarity
+        image_filename = titles[i] + ".png"
+        full_image_path = os.path.join(current_image_folder, image_filename)
+        try:
+            data_img.save(full_image_path) # Directly use PIL's save method
+        except Exception as e:
+            print(f"Error saving image {full_image_path}: {e}")
     
     return arr[:3]
 
