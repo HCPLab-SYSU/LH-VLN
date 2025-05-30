@@ -115,7 +115,7 @@ Or use distributed：
 ```bash
 torchrun --nnodes=1 --nproc_per_node=4 train.py  
 ```
-Please set based on machine configuration.
+Please set based on your machine configuration.
 
 ## Acknowledgement
 
