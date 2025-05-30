@@ -80,7 +80,7 @@ LH-VLN
 │   │   ├── val
 │   │   ├── hm3d_annotated_basis.scene_dataset_config.json
 │   └── models
-│   │   └── ram_plus_swin_large_14m.pth
+│   │   ├── ram_plus_swin_large_14m.pth
 │   ├── task
 │   │   ├── batch_1
 │   │   ├── ...
