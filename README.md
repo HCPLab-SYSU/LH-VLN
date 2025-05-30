@@ -81,6 +81,18 @@ LH-VLN
 │   │   ├── hm3d_annotated_basis.scene_dataset_config.json
 │   └── models
 │   │   └── ram_plus_swin_large_14m.pth
+│   ├── task
+│   │   ├── batch_1
+│   │   ├── ...
+│   │   ├── batch_8
+│   ├── step_task
+│   │   ├── batch_1
+│   │   ├── ...
+│   │   ├── batch_8
+│   ├── episode_task
+│   │   ├── batch_1.json.gz
+│   │   ├── ...
+│   │   ├── batch_8.json.gz
 ```
 
 ## LHPR-VLN Dataset
@@ -91,14 +103,23 @@ Our dataset is now available in [Hugging Face](https://huggingface.co/datasets/S
 
 After completing the preparations, you can now refer to the [guide](https://github.com/HCPLab-SYSU/LH-VLN/tree/master/nav_gen#readme) to generate your LH-VLN task!
 
-## Timeline
+## Benchmark
 
-- [ ] 2025.5: Full benchmark
+You can adjust the parameters in `configs/lh_vln.yaml` based on your own needs.
+
+Run:
+```bash
+python train.py
+```
+Or use distributed：
+```bash
+torchrun --nnodes=1 --nproc_per_node=4 train.py  
+```
+Please set based on machine configuration.
 
 ## Acknowledgement
 
 We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything`. Thanks for their contribution!!
-
 
 ## Citation
 
