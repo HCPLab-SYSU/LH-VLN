@@ -141,7 +141,7 @@ class HabitatAgent:
             # print gt action
             print(f"The ground truth action for step {self.task_sim.step} is {label}")                    
             
-            obs, done, info = self.task_sim.actor(label)
+            obs, done, info = self.task_sim.actor(action)
 
         self.task_sim.close()
         return self.task_sim.return_results()
