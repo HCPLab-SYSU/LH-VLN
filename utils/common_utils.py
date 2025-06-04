@@ -224,6 +224,58 @@ def euler_angles_to_rotation_matrix(euler_angles):
     return rotation_matrix
 
 
+def rotation_matrix_to_direction(rotation_matrix):
+    """
+    Extract the forward direction vector from a rotation matrix.
+    
+    Args:
+        rotation_matrix (numpy.ndarray): 3x3 rotation matrix
+    
+    Returns:
+        numpy.ndarray: 3D unit vector [x, y, z] representing the forward direction
+    """
+    # In most 3D systems, the forward direction is along the negative Z-axis
+    # When no rotation is applied, forward = [0, 0, -1]
+    # The rotation matrix transforms this to the actual forward direction
+    forward_direction = rotation_matrix @ np.array([0, 0, -1])
+    
+    # Normalize to ensure it's a unit vector (though it should already be)
+    forward_direction = forward_direction / np.linalg.norm(forward_direction)
+    
+    return forward_direction
+
+
+def is_object_in_fov(agent_pos, agent_rot, object_pos, fov_angle=60):
+    """
+    Check if an object is within the agent's field of view (FOV).
+
+    Args:
+        agent_pos (numpy.ndarray): The position of the agent (-y, z, -x).
+        agent_rot (quaternion.quaternion): The rotation of the agent (w, -y, z, -x).
+        object_pos (numpy.ndarray): The position of the object (-y, z, -x).
+        fov_angle (float): The field of view angle in degrees.
+
+    Returns:
+        bool: True if the object is within the FOV, False otherwise.
+    """
+    agent_pos = transform_position(agent_pos)
+    object_pos = transform_position(object_pos)
+    agent_rot = transform_rotation(agent_rot)
+
+    # Calculate the direction the agent is facing
+    agent_forward = rotation_matrix_to_direction(agent_rot)
+
+    # Calculate the vector from the agent to the object
+    to_object = object_pos - agent_pos
+    to_object /= np.linalg.norm(to_object)  # Normalize the vector
+
+    # Calculate the angle between the agent's forward direction and the vector to the object
+    angle = np.arccos(np.clip(np.dot(agent_forward, to_object), -1.0, 1.0))
+    angle = np.degrees(angle)
+
+    return angle < fov_angle / 2
+
+
 def worker_init_fn(worker_id, seed=666):
     if seed is not None:
         random.seed(seed + worker_id)
