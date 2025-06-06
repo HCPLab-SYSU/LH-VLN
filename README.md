@@ -48,7 +48,7 @@ conda activate lhvln
 We use [Habitat-Sim](https://github.com/facebookresearch/habitat-sim/tree/main) as simulator, which can be [built from source](https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md#build-from-source) or installed from conda:
 
 ```bash
-conda install habitat-sim headless -c conda-forge -c aihabitat
+conda install habitat-sim==0.3.1 headless -c conda-forge -c aihabitat
 ```
 
 Then you can install the environment required for the project:
