@@ -201,3 +201,107 @@ def get_obs(step, path):
         obj_ = action_dic[step][1]
 
     return [obs["left"], obs["front"], obs["right"]], action_, obj_, step in stop_steps
+
+def split_datasets_by_scene(dataset_list):
+    """
+    Split multiple TaskDataset or EpisodeDataset instances into three datasets 
+    based on 'Scene' labels in self.tasks elements
+    
+    Args:
+        dataset_list: List containing multiple TaskDataset or EpisodeDataset instances
+    
+    Returns:
+        tuple: (dataset_0_700, dataset_700_800, dataset_800_plus) Three redistributed dataset lists
+    """
+    # Collect all tasks and step_tasks from all datasets
+    all_tasks = []
+    all_step_tasks = []
+    
+    for dataset in dataset_list:
+        all_tasks.extend(dataset.tasks)
+        all_step_tasks.extend(dataset.step_tasks)
+    
+    # Classify by Scene labels
+    tasks_0_700 = []
+    step_tasks_0_700 = []
+    tasks_700_800 = []
+    step_tasks_700_800 = []
+    tasks_800_plus = []
+    step_tasks_800_plus = []
+    
+    for i, task in enumerate(all_tasks):
+        # Extract Scene ID from task, assume it's an integer field
+        scene_id = int(task['Scene'][:5])  
+
+        if 0 <= scene_id < 700:
+            tasks_0_700.append(task)
+            step_tasks_0_700.append(all_step_tasks[i])
+        elif 700 <= scene_id < 800:
+            tasks_700_800.append(task)
+            step_tasks_700_800.append(all_step_tasks[i])
+        else:  # scene_id >= 800
+            tasks_800_plus.append(task)
+            step_tasks_800_plus.append(all_step_tasks[i])
+    
+    return (tasks_0_700, step_tasks_0_700), (tasks_700_800, step_tasks_700_800), (tasks_800_plus, step_tasks_800_plus)
+
+def create_split_datasets(dataset_list, args):
+    """
+    Create three new dataset instances containing data split by Scene
+    
+    Args:
+        dataset_list: Original dataset list
+        args: Original arguments
+    
+    Returns:
+        tuple: Three new dataset instances
+    """
+    # Get split data
+    (tasks_0_700, step_tasks_0_700), (tasks_700_800, step_tasks_700_800), (tasks_800_plus, step_tasks_800_plus) = split_datasets_by_scene(dataset_list)
+    
+    # Determine dataset class type
+    dataset_class = type(dataset_list[0])
+    
+    # Create three new dataset instances
+    dataset_0_700 = dataset_class.__new__(dataset_class)
+    dataset_700_800 = dataset_class.__new__(dataset_class)
+    dataset_800_plus = dataset_class.__new__(dataset_class)
+    
+    mode = ['train', 'valid', 'test']
+    # Initialize basic attributes for all three datasets
+    for i, dataset in enumerate([dataset_0_700, dataset_700_800, dataset_800_plus]):
+        dataset.mode = mode[i]
+        
+        # Copy attributes based on dataset type
+        if hasattr(dataset_list[0], 'task_data'):
+            dataset.task_data = dataset_list[0].task_data
+        if hasattr(dataset_list[0], 'step_task_data'):
+            dataset.step_task_data = dataset_list[0].step_task_data
+        if hasattr(dataset_list[0], 'episode_data'):
+            dataset.episode_data = dataset_list[0].episode_data
+        
+        # Set batch size based on mode
+        if mode == 'train':
+            dataset.batch = args.train_batch
+        elif mode == 'valid':
+            dataset.batch = args.val_batch
+        else:
+            dataset.batch = args.test_batch
+    
+    # Assign task data to each dataset
+    dataset_0_700.tasks = tasks_0_700
+    dataset_0_700.step_tasks = step_tasks_0_700
+    dataset_0_700.data = []  # Can be reorganized based on needs
+    dataset_0_700.step_data = []
+    
+    dataset_700_800.tasks = tasks_700_800
+    dataset_700_800.step_tasks = step_tasks_700_800
+    dataset_700_800.data = []
+    dataset_700_800.step_data = []
+    
+    dataset_800_plus.tasks = tasks_800_plus
+    dataset_800_plus.step_tasks = step_tasks_800_plus
+    dataset_800_plus.data = []
+    dataset_800_plus.step_data = []
+    
+    return dataset_0_700, dataset_700_800, dataset_800_plus
