@@ -201,11 +201,11 @@ def validate_one_epoch(
                 result['navigation_errors']
                     )
 
-        for key, metric in metrics.items():
-            computed_metrics = metric.compute()
-            logger.info(f"Type: {key}")
-            for metric_name, value in computed_metrics.items():
-                logger.info(f"  {metric_name}: {value:.4f}")
+        # for key, metric in metrics.items():
+        #     computed_metrics = metric.compute()
+        #     logger.info(f"Type: {key}")
+        #     for metric_name, value in computed_metrics.items():
+        #         logger.info(f"  {metric_name}: {value:.4f}")
 
         verbose_dict = dict(
             step=step,
