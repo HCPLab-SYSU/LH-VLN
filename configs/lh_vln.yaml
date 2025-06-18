@@ -8,6 +8,7 @@ Path:
   train_batch: ['/batch_1', '/batch_2', '/batch_3', '/batch_4', '/batch_5']
   val_batch: ['/batch_6']
   test_batch: ['/batch_7', '/batch_8']
+  split_by_scene: True
 
   save_checkpoints: "LH-VLN/save_checkpoints"
 

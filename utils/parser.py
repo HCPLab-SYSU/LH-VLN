@@ -114,6 +114,7 @@ def read_args():
     args.train_batch = global_cfg.Path.train_batch
     args.val_batch = global_cfg.Path.val_batch
     args.test_batch = global_cfg.Path.test_batch
+    args.split_by_scene = global_cfg.Path.split_by_scene
 
     args.save_checkpoints = global_cfg.Path.save_checkpoints
 
