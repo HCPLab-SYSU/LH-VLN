@@ -1,6 +1,6 @@
 from utils.agent import HabitatAgent, save_checkpoint
 from utils.metrics import NavigationMetrics
-from utils.dataset import TaskDataset, EpisodeDataset
+from utils.dataset import TaskDataset, EpisodeDataset, create_split_datasets
 from utils.parser import read_args, random_seed
 from torch.utils.data import DataLoader
 from NavModel.RandomNav import RandomAgent
@@ -201,11 +201,11 @@ def validate_one_epoch(
                 result['navigation_errors']
                     )
 
-        for key, metric in metrics.items():
-            computed_metrics = metric.compute()
-            logger.info(f"Type: {key}")
-            for metric_name, value in computed_metrics.items():
-                logger.info(f"  {metric_name}: {value:.4f}")
+        # for key, metric in metrics.items():
+        #     computed_metrics = metric.compute()
+        #     logger.info(f"Type: {key}")
+        #     for metric_name, value in computed_metrics.items():
+        #         logger.info(f"  {metric_name}: {value:.4f}")
 
         verbose_dict = dict(
             step=step,
@@ -236,19 +236,25 @@ def main():
     CSR = 0.
     best_checkpoint = args.best_checkpoint if args.mode == 'test' else None 
 
+    if args.episode_data:
+        train_dataset = EpisodeDataset(args, mode='train')
+        val_dataset = EpisodeDataset(args, mode='valid')
+        test_dataset = EpisodeDataset(args, mode='test') 
+        # For unseen Test set
+        if args.split_by_scene:
+            train_dataset, val_dataset, test_dataset = create_split_datasets([train_dataset, val_dataset, test_dataset], args)    
+    else:
+        train_dataset = TaskDataset(args, mode='train')
+        val_dataset = TaskDataset(args, mode='valid')
+        test_dataset = TaskDataset(args, mode='test')
+        # For unseen Test set
+        if args.split_by_scene:
+            train_dataset, val_dataset, test_dataset = create_split_datasets([train_dataset, val_dataset, test_dataset], args)
+    train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
+    val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
+    test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
+
     if args.mode == 'train':
-        if args.episode_data:
-            train_dataset = EpisodeDataset(args, mode='train')
-        else:
-            train_dataset = TaskDataset(args, mode='train')
-        train_dataloader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
-
-        if args.episode_data:
-            val_dataset = EpisodeDataset(args, mode='valid')
-        else:
-            val_dataset = TaskDataset(args, mode='valid')
-        val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
-
         # metrics for diffrent tasks
         train_metrics = {
             'result': NavigationMetrics(),
@@ -345,12 +351,6 @@ def main():
                 )
         msg = nav_model.model.load_state_dict(update_model_state, strict=False)
         logger.info(f"Loaded best checkpoint from {best_checkpoint}")
-
-    if args.episode_data:
-        test_dataset = EpisodeDataset(args, mode='test')
-    else:
-        test_dataset = TaskDataset(args, mode='test')
-    test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4, collate_fn=custom_collate_fn)
 
     test_metrics = {
         'result': NavigationMetrics(),
