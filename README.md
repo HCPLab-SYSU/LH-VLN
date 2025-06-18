@@ -34,6 +34,10 @@
 as the first dataset specifically designed for the long-horizon vision-language navigation task. Furthermore, we propose Independent Success Rate (ISR), Conditional Success Rate (CSR), and CSR weight by Ground Truth (CGT) metrics, to provide fine-grained assessments of task completion. To improve model adaptability in complex tasks, we propose a novel Multi-Granularity Dynamic Memory (MGDM) module that integrates short-term memory blurring with long-term memory retrieval to enable flexible navigation in dynamic environments. Our platform, benchmark and method supply LH-VLN with a robust data generation pipeline, comprehensive model evaluation dataset, reasonable metrics, and a novel VLN model, establishing a foundational framework for advancing LH-VLN. </i></p>
 </div>
 
+## MMSP2025-Challenge
+
+The 1st Long-Horizon Vision-Language Navigation Challenge based on the “Embodied AI Challenge” track of the IEEE 27th International Workshop on Multimedia Signal Processing (MMSP 2025) is opened! Please go to the challenge [page](https://hcplab-sysu.github.io/LH-VLN/contest/) for more information. 
+
 ## Preparation
 
 ### Environment
