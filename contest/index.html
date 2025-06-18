@@ -150,7 +150,7 @@
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; color: white;">
 				<h1 style="color: white; ; font-size: 32px;">
 					<strong>MMSP 2025 Embodied AI Challenge:<br>
-						Long-horizon Vision-Language Navigation Challenge
+						Long-Horizon Vision-Language Navigation Challenge
 						<!-- <br> Social Mobile Manipulation Challenge -->
 						<br></strong>
 				</h1>
@@ -161,6 +161,11 @@
 						<a href="#challenge-details" rel="noreferrer">
 							<li>
 								<span>Schedule Details</span>
+							</li>
+						</a>
+						<a href="#challenge-guide" rel="noreferrer">
+							<li>
+								<span>Challenge Guide</span>
 							</li>
 						</a>
 						<a href="https://574606.proxy.nscc-gz.cn:8443/" rel="noreferrer">
@@ -181,7 +186,7 @@
 		<!-- Overall -->
 		<section style="text-align: center; width: 95%; margin: 0 auto;">
 			<p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: left;">
-				The 1st Long-horizon Vision-Language Navigation Challenge based on the insights presented in the <a href="https://github.com/HCPLab-SYSU/LH-VLN">
+				The 1st Long-Horizon Vision-Language Navigation Challenge based on the insights presented in the <a href="https://github.com/HCPLab-SYSU/LH-VLN">
 					LH-VLN</a>—hosted as the “Embodied AI Challenge” track of the IEEE 27th International Workshop on Multimedia Signal Processing (<a href="https://attend.ieee.org/mmsp-2025/">MMSP 2025</a>)—focuses on complicated long-horizon VLN tasks. Our LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
 				<!-- <img src="imgs/hssd.png" alt="Background Image" style="width: 100%; height: auto; display: block;"> -->
 				<img src="imgs/hm3d.jpeg" alt="Background Image" style="width: 100%; height: auto; display: block;">
@@ -240,7 +245,7 @@
 			<div style="margin-top: -10px"></div>
 			<h4>Task Overview</h4>
 			<div style="margin-top: -10px"></div>
-			The 1st Long-horizon Vision-Language Navigation Challenge focuses on complicated long‑horizon VLN tasks. LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
+			The 1st Long-Horizon Vision-Language Navigation Challenge focuses on complicated long‑horizon VLN tasks. LHPR-VLN benchmark defines a complex task that includes multiple single-stage subtasks. For an LHPR-VLN task, the basic format is “Find something somewhere, and take it to something somewhere, then. . . ”. Each complex task involves locating an object at a specified initial location and transporting it to a designated target location, potentially encompassing two to four sequential navigation subtasks. The embodied agent needs to sequentially complete these single-stage navigation tasks to ultimately fulfill the instruction. These tasks emphasizes long-term planning and decision consistency across consecutive subtasks. The goal is to push agents beyond simple, short-term navigation by requiring them to deeply comprehend complex task instructions, maintain continuous navigation, and handle sequential sub-tasks seamlessly across a dynamic environment.<br>
 
 			<h4>Submission evaluation</h4>
 			<!-- <p>The competition evaluation consists of two stages.</p> -->
@@ -273,10 +278,60 @@
 			<h4>Registration</h4>
 			<div style="margin-top: -10px"></div>
 			We have opened the <a href="https://574606.proxy.nscc-gz.cn:8443/"> registration link website</a>, where you can register and submit Docker information for us to evaluate your proposal. The website will also update the ranking scores of participants in real time. We look forward to your participation.
-			<h4>Challenge guide</h4>
+			<!-- <h4>Challenge guide</h4>
 			<div style="margin-top: -10px"></div>
-			<!-- coming soon... -->
-			 More information about the challenge can be found in the <a href="https://github.com/HCPLab-SYSU/LH-VLN"> LH-VLN repository</a>.
+			 More information about the challenge can be found in the <a href="https://github.com/HCPLab-SYSU/LH-VLN"> LH-VLN repository</a>. -->
+
+		</section>
+
+		<div style="margin-top: 20px"></div>
+		<!-- <hr> -->
+
+
+		<!-- Organizer -->
+		<section id="challenge-guide">
+			<section class="details" style="text-align: justify; margin-top: 20px;">
+				<div style="display: flex; flex-direction: column; align-items: center; width: 100%; ">
+					<h2>Challenge Guide</h2>
+				</div>
+			</section>
+
+			<div
+				style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+			</div>
+			<div style="margin-top: -10px"></div>
+			<h4>Experiment Result Score</h4>
+			<div style="margin-top: -10px"></div>
+			The final score is calculated as: Score = 0.4 * TAR + 0.2 * ISR + 0.2 * CSR + 0.2 * CGT</p>
+
+			<!-- For the detailed meaning and calculation methods of each metric, please refer to this <a href="https://github.com/Liquid-star/tst/blob/main/README.md"> link</a>. -->
+			For the detailed meaning and calculation methods of each metric, please refer to this <a href="https://github.com/HCPLab-SYSU/LH-VLN/blob/master/contest/metrics.md"> link</a>.
+			<div style="margin-top: -10px"></div>
+			<h4>First Stage Submission</h4>
+			<div style="margin-top: -10px"></div>
+			<!-- <strong>1. Dataset</strong></p> -->
+			1. Dataset</p>
+			
+			The dataset is divided based on scene IDs:
+			<ul>
+			  <li>Scene IDs below 700 are for the training set.
+			  <li>Scene IDs from 700 to 800 are for the validation set.
+			  <li>Scene IDs above 800 are for the test set.</li>
+			</ul>
+			For downloading and using the dataset, please refer to the <a href="https://github.com/HCPLab-SYSU/LH-VLN"> LH-VLN repository</a>.</p>
+
+			2. Submission</p>
+
+			Please submit the log file generated by running your model on the dataset. You can submit it <a href="https://forms.gle/zk3aUYDvecsEacwn6"> here</a>.
+			<div style="margin-top: -10px"></div>
+			<h4>Second Stage Submission</h4>
+			<div style="margin-top: -10px"></div>
+			coming soon...
+			<div style="margin-top: -10px"></div>
+			<h4>Other</h4>
+			<div style="margin-top: -10px"></div>
+			More information about the challenge can be found in the <a href="https://github.com/HCPLab-SYSU/LH-VLN"> LH-VLN repository</a>. 
+			We have opened an <a href="https://github.com/Liquid-star/LH-VLN_Challenge2025"> Issue platform</a> where you can submit any problems or questions you encounter during the competition.
 
 		</section>
 
@@ -309,8 +364,8 @@
 					</div>
 					<div class="speaker">
 						<figure>
-							<img src="imgs\organizers\chenweixing.jpeg" />
-							<figcaption><b><a href="http://wissingchen.github.io">Weixing Chen</a></b><br />PhD Student at SYSU
+							<img src="imgs\organizers\liguanbin.jpg" />
+							<figcaption><b><a href="https://www.sysu-hcp.net/faculty/liguanbin.html">Guanbin Li</a></b><br />Professor at SYSU
 							</figcaption>
 						</figure>
 					</div>
@@ -323,15 +378,22 @@
 					</div>
 					<div class="speaker">
 						<figure>
-							<img src="imgs\organizers\jiangkaixuan.jpeg" />
-							<figcaption><b><a href="https://github.com/kxxxxxxxxxx">Kaixuan Jiang</a></b><br />MSc Student at SYSU
+							<img src="imgs\organizers\zhangyexin.jpg" />
+							<figcaption><b><a href="https://github.com/Liquid-star">Yexin Zhang</a></b><br />MSc Student at SYSU
 							</figcaption>
 						</figure>
 					</div>
 					<div class="speaker">
 						<figure>
-							<img src="imgs\organizers\zhangyexin.jpg" />
-							<figcaption><b><a href="https://github.com/Liquid-star">Yexin Zhang</a></b><br />Undergraduate at SYSU
+							<img src="imgs\organizers\chenweixing.jpeg" />
+							<figcaption><b><a href="http://wissingchen.github.io">Weixing Chen</a></b><br />PhD Student at SYSU
+							</figcaption>
+						</figure>
+					</div>
+					<div class="speaker">
+						<figure>
+							<img src="imgs\organizers\jiangkaixuan.jpeg" />
+							<figcaption><b><a href="https://github.com/kxxxxxxxxxx">Kaixuan Jiang</a></b><br />MSc Student at SYSU
 							</figcaption>
 						</figure>
 					</div>
