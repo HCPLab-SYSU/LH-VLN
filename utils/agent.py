@@ -86,6 +86,7 @@ class HabitatAgent:
             agent_rot = transform_rotation(info["agent rotation"])
 
             input = {
+                'ins': self.task_sim.ins,       # instruction
                 'obs': obs,                     # ["left", "front", "right"] observations，if depth needed, turn to habitat_base.visualization.display_env
                 'agent_position': agent_pos,    # xyz
                 'agent_rotation': agent_rot,    # rotation matrix
@@ -130,6 +131,7 @@ class HabitatAgent:
             agent_rot = transform_rotation(info["agent rotation"])
 
             input = {
+                'ins': self.task_sim.ins,       # instruction
                 'obs': obs,                     # ["left", "front", "right"] observations，if depth needed, turn to habitat_base.visualization.display_env
                 'agent_position': agent_pos,    # xyz
                 'agent_rotation': agent_rot,    # rotation matrix
