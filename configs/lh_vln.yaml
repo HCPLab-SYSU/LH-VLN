@@ -18,7 +18,7 @@ Path:
 Train:
   mode: 'test'
   tensorboard: False
-  best_checkpoint: None
+  best_checkpoint: null
   load_checkpoint: False
   save_ckpt_per_epochs: 10
 
