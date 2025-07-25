@@ -1,6 +1,6 @@
 from .common_utils import transform_position, transform_rotation, transback_position, transback_rotation, rotation_matrix_to_euler_angles, euler_angles_to_rotation_matrix
 import numpy as np
-from EVA.EVA_CLIP.rei.clip import get_image_embedding
+from NavModel.LLMModel.EVA.EVA_CLIP.rei.clip import get_image_embedding
 import math
 import torch
 
