@@ -1,22 +1,22 @@
 Path:
-  scene: "/data2/songxinshuai/nav_gen/data/hm3d/"
-  scene_dataset: "/data2/songxinshuai/nav_gen/data/hm3d/hm3d_annotated_basis.scene_dataset_config.json"
+  scene: "LH-VLN/data/hm3d/"
+  scene_dataset: "LH-VLN/data/hm3d/hm3d_annotated_basis.scene_dataset_config.json"
   
-  episode_data: "/data2/songxinshuai/nav_gen/data/episode_task"
-  task_data: "/data2/songxinshuai/nav_gen/data/task"
-  step_task_data: "/data2/songxinshuai/nav_gen/data/step_task"
+  episode_data: "LH-VLN/data/episode_task"
+  task_data: "LH-VLN/data/task"
+  step_task_data: "LH-VLN/data/step_task"
   train_batch: ['/batch_1', '/batch_2', '/batch_3', '/batch_4', '/batch_5']
   val_batch: ['/batch_6']
   test_batch: ['/batch_7', '/batch_8']
   split_by_scene: True
 
-  save_checkpoints: "./save_checkpoints"
+  save_checkpoints: "LH-VLN/save_checkpoints"
 
-  tensorboard_path: "./run"
-  output_dir: "./output"
+  tensorboard_path: "LH-VLN/run"
+  output_dir: "LH-VLN/output"
 
 Train:
-  mode: 'train'
+  mode: 'test'
   tensorboard: False
   best_checkpoint: None
   load_checkpoint: False
@@ -33,10 +33,10 @@ Train:
 
 Model:
   model_name: "LLM Model"
-  pretrained_clip: "/data2/songxinshuai/nav_gen/data/models/clip-vit-base-patch16"
-  bert_model: "/data2/songxinshuai/nav_gen/data/models/bert-large-uncased"
-  pretrained_model_name_or_path: "/data2/LLM/Qwen2.5/Qwen-3B"
-  resume_from_checkpoint: None
+  pretrained_clip: "LH-VLN/data/models/clip-vit-base-patch16"
+  bert_model: "LH-VLN/data/models/bert-large-uncased"
+  pretrained_model_name_or_path: "path to your pretrained LLM(Llama/Qwen base series)"
+  resume_from_checkpoint: None  # if you have a checkpoint and you want to load model from that state, here is the path you need to add
   from_scratch: True
   feat_dropout: 0.4
   temperature: 1.0
