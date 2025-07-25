@@ -15,7 +15,7 @@ logging.set_verbosity_error()
 
 
 def init_vis_config(args, config):
-    cfg_name = '/data2/songxinshuai/nav_gen/data/models/bert-large-uncased'
+    cfg_name = args.bert_model
     vis_config = PretrainedConfig.from_pretrained(cfg_name)
     vis_config.num_pano_layers = args.num_pano_layers
     vis_config.precision = args.precision
