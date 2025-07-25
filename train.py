@@ -305,7 +305,10 @@ def main():
         else:
             return batch
 
-    nav_model = ContinuousNav(args, global_cfg, logger, device_id)
+    if args.model_name == 'LLM Model':
+        nav_model = ContinuousNav(args, global_cfg, logger, device_id)
+    else:
+        nav_model = RandomAgent()
 
     criterion = nn.CrossEntropyLoss(ignore_index=args.ignoreid, reduction='sum')
     # we save the best checkpoint for the best CSR
