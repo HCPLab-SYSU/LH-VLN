@@ -106,7 +106,6 @@ def read_args():
     # global config for data path
     args.scene = global_cfg.Path.scene
     args.scene_dataset = global_cfg.Path.scene_dataset
-    args.model_name = global_cfg.Model.model_name
 
     args.episode_data = global_cfg.Path.episode_data
     args.task_data = global_cfg.Path.task_data
@@ -136,6 +135,21 @@ def read_args():
     args.num_warmup_steps = global_cfg.Train.num_warmup_steps
 
     args.success_dis = global_cfg.Train.success_dis
+
+    # model config
+    args.model_name = global_cfg.Model.model_name
+    args.pretrained_clip = global_cfg.Model.pretrained_clip
+    args.bert_model = global_cfg.Model.bert_model
+    args.pretrained_model_name_or_path = global_cfg.Model.pretrained_model_name_or_path
+    args.resume_from_checkpoint = global_cfg.Model.resume_from_checkpoint
+    args.from_scratch = global_cfg.Model.from_scratch
+    args.feat_dropout = global_cfg.Model.feat_dropout
+    args.temperature = global_cfg.Model.temperature
+    args.image_feat_size = global_cfg.Model.image_feat_size 
+    args.angle_feat_size = global_cfg.Model.angle_feat_size
+    args.enc_full_graph = global_cfg.Model.enc_full_graph
+    args.num_pano_layers = global_cfg.Model.num_pano_layers
+    args.max_memory = global_cfg.Model.max_memory
 
     os.makedirs(args.output_dir, exist_ok=True)
     log_file = Path(args.output_dir) / 'log.txt'

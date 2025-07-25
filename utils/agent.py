@@ -1,11 +1,9 @@
 from habitat_base.simulation import SceneSimulator
 from .common_utils import transform_position, transform_rotation, transback_position, transback_rotation, rotation_matrix_to_euler_angles, euler_angles_to_rotation_matrix
+from NavModel.LLMModel.EVA.EVA_CLIP.rei.clip import get_image_embedding
 import numpy as np
-import json
 import math
-import shutil
 import torch
-import os
 
 label_index = {
     "stop": np.array([0]), # stop
@@ -63,13 +61,13 @@ class HabitatAgent:
         self.args = args
         self.config = config
         self.nav_model = nav_model
-        
+        self.nav_model.reset_episode(1)
+
         self.task_sim = SceneSimulator(args=args, config=config)
         
     def train(self, criterion, step_task=False):
         # init
-        finished = 0
-        ml_loss, cnt_loss = 0., 0.
+        ml_loss = 0.
         count = 0
         self.task_sim.gt_step = self.task_sim.count_gt_step(step_task)
         action = 'stop'
@@ -86,29 +84,30 @@ class HabitatAgent:
             agent_rot = transform_rotation(info["agent rotation"])
 
             input = {
-                'ins': self.task_sim.ins,       # instruction
-                'obs': obs,                     # ["left", "front", "right"] observations，if depth needed, turn to habitat_base.visualization.display_env
-                'agent_position': agent_pos,    # xyz
-                'agent_rotation': agent_rot,    # rotation matrix
+                'observations': [
+                    {
+                        "instruction": self.task_sim.ins,                                       # instruction
+                        "view_feats": get_image_embedding(obs),                                 # "view features"
+                        "pose": np.append(agent_pos, rotation_matrix_to_euler_angles(agent_rot)[2]),    # xyz,heading
+                    }
+                ],
             }
 
             label = self.task_sim.get_next_action(info["target coord"])
             label_onehot = torch.from_numpy(label_index[label])
             
-            action = self.nav_model.nav(input)
-            output = torch.from_numpy(label_index[action])
+            action, output = self.nav_model.step(input["observations"])
+            # output = torch.from_numpy(label_index[action])
 
             # print gt action
             print(f"The ground truth action for step {self.task_sim.step} is {label}")
                     
-            cnt_loss += criterion(output, label_onehot.to(output.device)) / self.args.gradient_accumulation_step
+            cnt_loss = criterion(output, label_onehot.to(output.device)) / self.args.gradient_accumulation_step
 
             ml_loss += cnt_loss.detach()
             count += 1
 
-            if count % self.args.gradient_accumulation_step == 0:
-                cnt_loss.backward()
-                cnt_loss = 0.    
+            cnt_loss.backward()
             
             obs, done, info = self.task_sim.actor(action)
             
@@ -119,6 +118,7 @@ class HabitatAgent:
     def validate(self, step_task=False):  
         action = 'stop'
         obs, done, info = self.task_sim.actor(action)
+        
         self.task_sim.gt_step = self.task_sim.count_gt_step(step_task)
         if step_task:
             pos = self.config["start_pos"]
@@ -131,14 +131,17 @@ class HabitatAgent:
             agent_rot = transform_rotation(info["agent rotation"])
 
             input = {
-                'ins': self.task_sim.ins,       # instruction
-                'obs': obs,                     # ["left", "front", "right"] observations，if depth needed, turn to habitat_base.visualization.display_env
-                'agent_position': agent_pos,    # xyz
-                'agent_rotation': agent_rot,    # rotation matrix
+                'observations': [
+                    {
+                        "instruction": self.task_sim.ins,                                       # instruction
+                        "view_feats": get_image_embedding(obs),                                 # "view features"
+                        "pose": np.append(agent_pos, rotation_matrix_to_euler_angles(agent_rot)[2]),    # xyz,heading
+                    }
+                ],
             }
 
             label = self.task_sim.get_next_action(info["target coord"])           
-            action = self.nav_model.nav(input)
+            action, output = self.nav_model.step(input["observations"])
 
             # print gt action
             print(f"The ground truth action for step {self.task_sim.step} is {label}")                    

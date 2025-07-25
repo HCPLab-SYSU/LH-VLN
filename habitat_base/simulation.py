@@ -102,7 +102,8 @@ class SceneSimulator:
             return obs, self.done, self.info
         else:
             print("action: %s, step: %d" % (action, self.step))
-
+            
+        # It is recommended to modify it to not increase the step when the action is "stop"
         self.step += 1
 
         self.info = self.get_info()  # get the info of the current state

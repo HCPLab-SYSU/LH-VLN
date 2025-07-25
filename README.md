@@ -74,6 +74,8 @@ python -m habitat_sim.utils.datasets_download --username <api-token-id> --passwo
 
 In NavGen, we use the pre-trained model of [RAM](https://github.com/xinyu1205/recognize-anything). You can download the model [here](https://huggingface.co/xinyu1205/recognize-anything-plus-model/blob/main/ram_plus_swin_large_14m.pth).
 
+We used pre-trained `clip` and `bert` in the model encoding, and their weights can be obtained from the following links: [EVA02_CLIP_L_336_psz14_s6B.pt](https://huggingface.co/QuanSun/EVA-CLIP/blob/main/EVA02_CLIP_L_336_psz14_s6B.pt), [clip-vit-base-patch16](https://huggingface.co/openai/clip-vit-base-patch16) and [bert-large-uncased](https://huggingface.co/google-bert/bert-large-uncased).
+
 Your final directory structure should be like this:
 
 ```
@@ -85,6 +87,9 @@ LH-VLN
 │   │   ├── hm3d_annotated_basis.scene_dataset_config.json
 │   └── models
 │   │   ├── ram_plus_swin_large_14m.pth
+│   │   ├── EVA02_CLIP_L_336_psz14_s6B.pt
+│   │   ├── clip-vit-base-patch16
+│   │   ├── bert-large-uncased
 │   ├── task
 │   │   ├── batch_1
 │   │   ├── ...
@@ -121,9 +126,25 @@ torchrun --nnodes=1 --nproc_per_node=4 train.py
 ```
 Please set based on your machine configuration.
 
+## Baseline
+
+We currently provide a simplified version of the model and expand its adaptability so that it can be trained and inferenced on Llama/Qwen-based models of different scales (from 0.5B to 13B and more). You can adjust the parameters in `configs/model.yaml` based on your own needs.（Change the config file in `utils/parser.py`.)
+
+Run:
+```bash
+python train.py
+```
+Or use distributed：
+```bash
+torchrun --nnodes=1 --nproc_per_node=4 train.py  
+```
+Please set based on your machine configuration.
+
+In addition, we also provide the supervised fine-tuning code using VLA data, please refer to `sft.py`.
+
 ## Acknowledgement
 
-We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything`. Thanks for their contribution!!
+We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything` and [EVA](https://github.com/baaivision/EVA/tree/master)'s source code in `NavModel/LLMModel/EVA`. Besides, we refer to some codes of [NaviLLM](https://github.com/zd11024/NaviLLM). Thanks for their contribution!!
 
 ## Citation
 
