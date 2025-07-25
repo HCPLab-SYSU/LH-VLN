@@ -128,7 +128,7 @@ Please set based on your machine configuration.
 
 ## Baseline
 
-We currently provide a simplified version of the model and expand its adaptability so that it can be trained and inferenced on Llama/Qwen-based models of different scales (from 0.5B to 13B and more). You can adjust the parameters in `configs/model.yaml` based on your own needs.
+We currently provide a simplified version of the model and expand its adaptability so that it can be trained and inferenced on Llama/Qwen-based models of different scales (from 0.5B to 13B and more). You can adjust the parameters in `configs/model.yaml` based on your own needs.（Change the config file in `utils/parser.py.)
 
 Run:
 ```bash
