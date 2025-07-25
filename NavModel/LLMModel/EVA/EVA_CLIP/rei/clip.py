@@ -9,8 +9,8 @@ from .load import load_img
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # load visual encoder
 # device = torch.device('cuda:1')
-
-model, _, transform = create_model_and_transforms("EVA02-CLIP-L-14-336", "/data2/songxinshuai/nav_gen/data/models/EVA02_CLIP_L_336_psz14_s6B.pt", force_custom_clip=True)
+root_path = os.getcwd()
+model, _, transform = create_model_and_transforms("EVA02-CLIP-L-14-336", root_path+"/data/models/EVA02_CLIP_L_336_psz14_s6B.pt", force_custom_clip=True)
 visual_encoder = model.visual.to(device)
 visual_encoder.eval()
 
