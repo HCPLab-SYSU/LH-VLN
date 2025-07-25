@@ -37,12 +37,12 @@ Model:
   bert_model: "LH-VLN/data/models/bert-large-uncased"
   pretrained_model_name_or_path: "path to your pretrained LLM(Llama/Qwen base series)"
   resume_from_checkpoint: None  # if you have a checkpoint and you want to load model from that state, here is the path you need to add
-  from_scratch: True
+  from_scratch: True  # if your model is not vicuna 7b or llama 8b, set it to True
   feat_dropout: 0.4
   temperature: 1.0
   image_feat_size: 1024
   angle_feat_size: 4
   enc_full_graph: True
   num_pano_layers: 2
-  max_memory: 2
+  max_memory: 20  # based on your vram
 
