@@ -3,7 +3,6 @@ import os
 # os.environ['CUDA_VISIBLE_DEVICES'] = '2,0'
 import numpy as np
 from .eva_clip import create_model_and_transforms
-from .load import load_img
 # from sklearn.metrics.pairwise import euclidean_distances
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
