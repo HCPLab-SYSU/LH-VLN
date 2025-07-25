@@ -18,7 +18,7 @@ Path:
 Train:
   mode: 'test'
   tensorboard: False
-  best_checkpoint: None
+  best_checkpoint: null
   load_checkpoint: False
   save_ckpt_per_epochs: 10
 
@@ -36,7 +36,7 @@ Model:
   pretrained_clip: "LH-VLN/data/models/clip-vit-base-patch16"
   bert_model: "LH-VLN/data/models/bert-large-uncased"
   pretrained_model_name_or_path: "path to your pretrained LLM(Llama/Qwen base series)"
-  resume_from_checkpoint: None  # if you have a checkpoint and you want to load model from that state, here is the path you need to add
+  resume_from_checkpoint: null  # if you have a checkpoint and you want to load model from that state, here is the path you need to add
   from_scratch: True  # if your model is not vicuna 7b or llama 8b, set it to True
   feat_dropout: 0.4
   temperature: 1.0
