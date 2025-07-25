@@ -22,7 +22,7 @@ timm==0.9.2
 torch==2.4.1
 torchvision==0.19.1
 tqdm==4.64.1
-transformers==4.28.0
+transformers==4.37.0
 sentencepiece==0.1.99
 deepspeed==0.6.5
 xformers
