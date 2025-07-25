@@ -12,10 +12,7 @@ import numpy as np
 import tqdm
 import time
 import torch
-import warnings
 
-# Suppress warnings
-warnings.filterwarnings("ignore")
 
 def train_one_sft_epoch(
         args, 
