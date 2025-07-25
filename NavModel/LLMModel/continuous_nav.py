@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import math
 from .models.nav_model import NavModel
-from .tools.optims import dist_models
+from utils.optims import dist_models
 from .tools.gmap import ContinuousGraphMap
 from .tools.memory import forget_with_entropy
 
