@@ -126,6 +126,22 @@ torchrun --nnodes=1 --nproc_per_node=4 train.py
 ```
 Please set based on your machine configuration.
 
+## Baseline
+
+We currently provide a simplified version of the model and expand its adaptability so that it can be trained and inferenced on Llama/Qwen-based models of different scales (from 0.5B to 13B and more). You can adjust the parameters in `configs/model.yaml` based on your own needs.
+
+Run:
+```bash
+python train.py
+```
+Or use distributed：
+```bash
+torchrun --nnodes=1 --nproc_per_node=4 train.py  
+```
+Please set based on your machine configuration.
+
+In addition, we also provide the supervised fine-tuning code using VLA data, please refer to `sft.py`.
+
 ## Acknowledgement
 
 We used [RAM](https://github.com/xinyu1205/recognize-anything)'s source code in `nav_gen/recognize_anything` and [EVA](https://github.com/baaivision/EVA/tree/master)'s source code in `NavModel/LLMModel/EVA`. Besides, we refer to some codes of [NaviLLM](https://github.com/zd11024/NaviLLM). Thanks for their contribution!!
